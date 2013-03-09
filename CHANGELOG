@@ -1,0 +1,49 @@
+Changes
+-------
+
+v6
+==
+
+- oops, uvlumcalib assumed stray lights was white
+
+- mark spectralon on flourescece image, not visible
+
+- first version of KM 
+
+v5
+==
+
+- uvlumcalib3.ws shows the synthetic stray light image it makes
+
+- fix a spelling error in uvlumcalib3.ws
+
+- only need to mark the spectralon once in false-colour5.ws
+
+- false-colour5.ws also makes the calibrated mono image
+
+- false-colour5.ws now uses all spectralon patches to match UV / IR to vis
+
+v4
+==
+
+- removed the reflectance standard step from visible calibration
+
+- whitebalance is now optional -- a toggle turns correction on and off
+
+- fixed a few small errors
+
+v3
+==
+
+- calibrate3.ws now makes you select a reflectance standard and sets the
+  brightness from that
+
+  you need to enter the % reflectance of your standard -- it's 75% right now
+
+- calibrate3.ws now automatically sets the depth of the output image to match
+  the depth of the input (ie. 8- or 16-bit)
+
+  the false-colour workspace did this in the previous version, now calibrate
+  does it as well
+
+
