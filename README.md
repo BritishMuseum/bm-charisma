@@ -4,13 +4,13 @@ This set of workspaces are for working with technical images of museum
 objects. They are useful for colour calibration, preparation of false-colour
 images, and calibration of fluorescence images. 
 
-# Acknowledgements
+### Acknowledgements
 
 The development of these workspaces was funded by The British Museum under 
 the EU CHARISMA programme. They were developed by Joanne Dyer, Giovanni Verri
 and John Cupitt. 
 
-# Import
+### Import
 
 For these workspace to work well, you need to take care importing images from 
 your camera. The workspaces assume that the ICC profile attached to the image
@@ -24,12 +24,11 @@ You can import with rawtherapee like this:
 
 where rawtherapee-import-params.pp3 is in this directory. 
 
-# Installing nip2
+### Installing nip2
 
-nip2 is the GUI of the vips image processing system. You can download the
-program here:
-
-	http://www.vips.ecs.soton.ac.uk/supported/current
+nip2 is the GUI of the vips image processing system. You can [download the
+program](http://www.vips.ecs.soton.ac.uk/supported/current) from the vips
+website.
 
 There are versions for Windows and OS X. On Linux, start your package manager
 and search for "nip2".
