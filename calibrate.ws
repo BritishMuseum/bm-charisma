@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.30.0">
-  <Workspace window_x="0" window_y="0" window_width="1920" window_height="1051" filename="$HOME/BM/v5x/calibrate4.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="calibrate4" caption="Default empty workspace">
+  <Workspace window_x="0" window_y="0" window_width="1918" window_height="1051" filename="$HOME/GIT/bm-workspaces/calibrate.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="calibrate" caption="Default empty workspace">
     <Column x="539" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="import macbeth to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -64,14 +64,14 @@
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2180" image_top="1212" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="368" image_top="1686" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="C7"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B2">
           <Rhs vislevel="1" flags="1">
-            <iArrow left="1993" top="1200" width="404" height="-1">
+            <iArrow left="258" top="1590" width="16" height="947">
               <iRegiongroup/>
             </iArrow>
             <Subcolumn vislevel="0"/>
@@ -80,7 +80,7 @@
         </Row>
         <Row popup="false" name="B3">
           <Rhs vislevel="3" flags="7">
-            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2228" image_top="912" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2208" image_top="2022" image_mag="-6" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1">
               <Row name="x">
                 <Rhs vislevel="0" flags="4">
@@ -125,7 +125,7 @@
         </Row>
         <Row popup="false" name="B4">
           <Rhs vislevel="1" flags="1">
-            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="1992" top="575" width="425" height="646">
+            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="264" top="1572" width="648" height="990">
               <iRegiongroup/>
             </iRegion>
             <Subcolumn vislevel="0"/>
@@ -155,7 +155,7 @@
               </Row>
               <Row name="angle">
                 <Rhs vislevel="1" flags="1">
-                  <Option caption="Rotate by" labelsn="4" labels0="Don't rotate" labels1="90 degrees clockwise" labels2="180 degrees" labels3="90 degrees anticlockwise" value="3"/>
+                  <Option caption="Rotate by" labelsn="4" labels0="Don't rotate" labels1="90 degrees clockwise" labels2="180 degrees" labels3="90 degrees anticlockwise" value="1"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -377,12 +377,12 @@
           <Rhs vislevel="1" flags="1">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/BM/v5x/65346_01_idas-photoshop.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_idas_1.TIF&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F10">
           <Rhs vislevel="1" flags="1">
-            <Toggle caption="correct macbeth with flatfield" value="false"/>
+            <Toggle caption="correct macbeth with flatfield" value="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="Widget_toggle_item.action"/>
           </Rhs>
@@ -391,7 +391,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage window_x="160" window_y="52" window_width="852" window_height="750" image_left="2012" image_top="843" image_mag="1" show_status="true" show_paintbox="true" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/BM/v5x/1919_0101_261_01_idas_wb.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_wb_1.TIF&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F12">
@@ -413,7 +413,7 @@
         </Row>
         <Row popup="false" name="F11">
           <Rhs vislevel="1" flags="1">
-            <Toggle caption="correct image with flatfield" value="false"/>
+            <Toggle caption="correct image with flatfield" value="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="Widget_toggle_item.action"/>
           </Rhs>
