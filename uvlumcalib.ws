@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.30.0">
-  <Workspace window_x="0" window_y="0" window_width="1398" window_height="1055" filename="$HOME/GIT/bm-workspaces/uvlumcalib.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumcalib" caption="Default empty workspace">
+  <Workspace window_x="0" window_y="0" window_width="1398" window_height="1050" filename="$HOME/GIT/bm-workspaces/uvlumcalib.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumcalib" caption="Default empty workspace">
     <Column x="770" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="import macbeth to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -449,7 +449,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_uv_reflectance.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_uvrcalib.TIF&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -745,6 +745,13 @@
             <iText formula="&quot;drag Q14 to mark reflectance target&quot;"/>
           </Rhs>
         </Row>
+        <Row popup="false" name="Q1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="4" window_y="22" window_width="750" window_height="750" image_left="368" image_top="1220" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="T3"/>
+          </Rhs>
+        </Row>
         <Row popup="false" name="Q13">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="736" image_top="1490" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
@@ -752,20 +759,13 @@
             <iText formula="E17"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="Q1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="4" window_y="22" window_width="750" window_height="750" image_left="2226" image_top="2172" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="T3"/>
-          </Rhs>
-        </Row>
         <Row popup="false" name="Q14">
-          <Rhs vislevel="1" flags="1">
-            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="410" top="1392" width="32" height="34">
+          <Rhs vislevel="2" flags="5">
+            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="369" top="1377" width="71" height="78">
               <iRegiongroup/>
             </iRegion>
             <Subcolumn vislevel="0"/>
-            <iText formula="Region Q13 415 1374 71 78"/>
+            <iText formula="Region Q1 415 1374 71 78"/>
           </Rhs>
         </Row>
         <Row popup="false" name="Q9">
@@ -795,7 +795,7 @@
                     </Row>
                     <Row name="expr">
                       <Rhs vislevel="0" flags="4">
-                        <iText formula="Q14.left"/>
+                        <iText formula="Q14.left "/>
                       </Rhs>
                     </Row>
                     <Row name="super">
@@ -819,7 +819,7 @@
                     </Row>
                     <Row name="expr">
                       <Rhs vislevel="0" flags="4">
-                        <iText formula="Q14.top"/>
+                        <iText formula="Q14.top "/>
                       </Rhs>
                     </Row>
                     <Row name="super">
@@ -843,7 +843,7 @@
                     </Row>
                     <Row name="expr">
                       <Rhs vislevel="0" flags="4">
-                        <iText formula="Q14.width"/>
+                        <iText formula="Q14.width "/>
                       </Rhs>
                     </Row>
                     <Row name="super">
@@ -867,7 +867,7 @@
                     </Row>
                     <Row name="expr">
                       <Rhs vislevel="0" flags="4">
-                        <iText formula="Q14.height"/>
+                        <iText formula="Q14.height "/>
                       </Rhs>
                     </Row>
                     <Row name="super">
@@ -886,7 +886,7 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Image_crop_item.action Q1"/>
+            <iText formula="Image_crop_item.action Q13"/>
           </Rhs>
         </Row>
         <Row popup="false" name="Q12">
@@ -909,8 +909,8 @@
           </Rhs>
         </Row>
         <Row popup="false" name="Q18">
-          <Rhs vislevel="1" flags="1">
-            <iText formula="100 * Q17 / Q15"/>
+          <Rhs vislevel="2" flags="5">
+            <iText formula="100 * Q15 / Q17"/>
             <Vector/>
             <Subcolumn vislevel="0"/>
           </Rhs>
@@ -1077,7 +1077,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4171" y="609" open="true" selected="false" sform="false" next="4" name="U" caption="test alignment">
+    <Column x="4171" y="582" open="true" selected="false" sform="false" next="4" name="U" caption="test alignment">
       <Subcolumn vislevel="3">
         <Row popup="false" name="U1">
           <Rhs vislevel="2" flags="5">
@@ -1102,7 +1102,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4594" y="1136" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
+    <Column x="4594" y="1187" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="W1">
           <Rhs vislevel="2" flags="5">
@@ -1233,7 +1233,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="5757" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+    <Column x="5720" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
@@ -1253,7 +1253,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="K3"/>
+            <iText formula="K7"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J21">
@@ -1347,14 +1347,14 @@
         </Row>
         <Row popup="false" name="J15">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="1069" window_y="70" window_width="750" window_height="750" image_left="1239" image_top="1749" image_mag="-3" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="46.916662711438143" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="1069" window_y="70" window_width="750" window_height="750" image_left="1239" image_top="1749" image_mag="-3" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="75.401759631879372" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="J20 / J4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J18">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="4.9842813694681078" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="(1 - J15) ** 2 / (2 * J15)"/>
           </Rhs>
@@ -1370,12 +1370,12 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="663" window_y="179" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="0.7 * J2 / (J14 * J19)"/>
+            <iText formula="0.5 * J2 / (J14 * J19)"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="5757" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="5720" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -1444,7 +1444,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="5188" y="0" open="true" selected="false" sform="false" next="4" name="K" caption="import UV reflectance to linear light">
+    <Column x="5188" y="0" open="true" selected="true" sform="false" next="9" name="K" caption="import UV reflectance to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K1">
           <Rhs vislevel="2" flags="5">
@@ -1496,9 +1496,79 @@
         </Row>
         <Row popup="false" name="K3">
           <Rhs vislevel="3" flags="7">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1327" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
             <iText formula="Colour_convert_item.XYZ_item.action K2"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K5">
+          <Rhs vislevel="3" flags="7">
+            <Colour/>
+            <Subcolumn vislevel="1">
+              <Row name="default_colour">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="default_value">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <Colour/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="space">
+                <Rhs vislevel="1" flags="1">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="colour">
+                <Rhs vislevel="1" flags="1">
+                  <Expression caption="Colour value"/>
+                  <Subcolumn vislevel="0">
+                    <Row name="caption">
+                      <Rhs vislevel="0" flags="4">
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                    <Row name="expr">
+                      <Rhs vislevel="0" flags="4">
+                        <iText formula="[100, 0, 0]"/>
+                      </Rhs>
+                    </Row>
+                    <Row name="super">
+                      <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                  </Subcolumn>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_new_item.Widget_colour_item.action"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K6">
+          <Rhs vislevel="3" flags="7">
+            <Colour/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Colour_convert_item.XYZ_item.action K5"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K7">
+          <Rhs vislevel="2" flags="5">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="K6 * (K3 / K6)?2"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -1535,7 +1605,7 @@
         </Row>
         <Row popup="false" name="M5">
           <Rhs vislevel="3" flags="7">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="319" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
             <iText formula="Image_join_item.Left_right_item.action M4 M3"/>
           </Rhs>
@@ -1549,7 +1619,7 @@
         </Row>
         <Row popup="false" name="M7">
           <Rhs vislevel="3" flags="7">
-            <iImage window_x="1" window_y="52" window_width="1037" window_height="507" image_left="838" image_top="198" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="1" window_y="52" window_width="1538" window_height="580" image_left="762" image_top="234" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1">
               <Row name="x">
                 <Rhs vislevel="3" flags="4">

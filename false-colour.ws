@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.31.0">
-  <Workspace window_x="0" window_y="0" window_width="1918" window_height="1051" filename="$HOME/GIT/bm-workspaces/false-colour.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="Default empty workspace">
+  <Workspace window_x="0" window_y="0" window_width="1920" window_height="1051" filename="$HOME/GIT/bm-workspaces/false-colour.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="Default empty workspace">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="8" name="A" caption="input images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A3">
@@ -12,7 +12,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="1840" image_top="1595" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_viscalib.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_viscalib.TIF&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A4">
@@ -161,7 +161,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="3234" y="0" open="true" selected="false" sform="false" next="22" name="F" caption="create false-colour image">
+    <Column x="3234" y="0" open="true" selected="true" sform="false" next="24" name="F" caption="create false-colour image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F2">
           <Rhs vislevel="2" flags="5">
@@ -286,7 +286,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="399" open="true" selected="true" sform="false" next="10" name="H" caption="final result">
+    <Column x="0" y="399" open="true" selected="false" sform="false" next="10" name="H" caption="final result">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H7">
           <Rhs vislevel="1" flags="4">
