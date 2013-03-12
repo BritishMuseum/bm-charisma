@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.30.0">
-  <Workspace window_x="0" window_y="0" window_width="611" window_height="1044" filename="$HOME/BM/v6/uvlumcalib4.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumcalib4" caption="Default empty workspace">
+  <Workspace window_x="0" window_y="0" window_width="611" window_height="1044" filename="$HOME/GIT/bm-workspaces/uvlumcalib.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumcalib" caption="Default empty workspace">
     <Column x="539" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="import macbeth to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -387,7 +387,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/BM/v6/65346_01_idas.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_01_idas.tif&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F10">
@@ -418,7 +418,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage window_x="454" window_y="33" window_width="750" window_height="750" image_left="1872" image_top="2390" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/BM/v6/65346_04_kv418+idas_01.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_04_kv418+idas_01.tif&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F12">
@@ -437,7 +437,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="541" open="true" selected="true" sform="false" next="12" name="G" caption="results">
+    <Column x="0" y="541" open="true" selected="false" sform="false" next="12" name="G" caption="results">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G4">
           <Rhs vislevel="1" flags="4">
@@ -477,7 +477,7 @@
         </Row>
         <Row popup="false" name="G10">
           <Rhs vislevel="1" flags="4">
-            <iText formula="&quot;after KM correction&quot;"/>
+            <iText formula="&quot;after KM processing&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="G11">
@@ -1211,7 +1211,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4919" y="0" open="true" selected="false" sform="false" next="16" name="J" caption="kubelka munk">
+    <Column x="4919" y="0" open="true" selected="false" sform="false" next="20" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
@@ -1222,7 +1222,7 @@
         </Row>
         <Row popup="false" name="J2">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="663" window_y="70" window_width="750" window_height="750" image_left="1317" image_top="1758" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="173" window_y="141" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="Q5"/>
           </Rhs>
@@ -1308,25 +1308,53 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="27.295051938857174" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="1 / (1 + (J5 / (J5 + 2)) ** 0.5)"/>
+            <iText formula="1 / (1 + (J13 / (J13 + 2)) ** 0.5)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J16">
+          <Rhs vislevel="2" flags="5">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="J2 * 1"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J15">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1069" window_y="70" window_width="750" window_height="750" image_left="1239" image_top="1749" image_mag="-3" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="J2 / J14"/>
+            <iText formula="J16 / J4"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J18">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="(1 - J15) ** 2 / (2 * J15)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J19">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="11.952023241406405" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="1 / (1 + ( (J13 * (J13 + 2)) / (J18 * (J18 + 2)) ) ** 0.5)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J17">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="663" window_y="179" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="J16 / (J14 * J19)"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4919" y="1057" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="4919" y="1532" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1337" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="J15"/>
+            <iText formula="J17"/>
           </Rhs>
         </Row>
         <Row popup="false" name="I2">
@@ -1382,7 +1410,7 @@
         </Row>
         <Row popup="false" name="I5">
           <Rhs vislevel="3" flags="7">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="1091" window_y="84" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
             <iText formula="Colour_convert_item.sRGB_item.action I4"/>
           </Rhs>
