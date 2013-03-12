@@ -984,11 +984,11 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4171" y="0" open="true" selected="false" sform="false" next="4" name="T" caption="align visible and UV-induced luminescence">
+    <Column x="4171" y="0" open="true" selected="false" sform="false" next="4" name="T" caption="align UV-induced luminescence to visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="T1">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="134" window_y="163" window_width="750" window_height="750" image_left="1896" image_top="342" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="134" window_y="163" window_width="750" window_height="750" image_left="2208" image_top="1914" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="E17"/>
           </Rhs>
@@ -1077,7 +1077,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4171" y="582" open="true" selected="false" sform="false" next="4" name="U" caption="test alignment">
+    <Column x="4171" y="609" open="true" selected="false" sform="false" next="4" name="U" caption="test alignment">
       <Subcolumn vislevel="3">
         <Row popup="false" name="U1">
           <Rhs vislevel="2" flags="5">
@@ -1503,7 +1503,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="1332" open="true" selected="true" sform="false" next="8" name="M" caption="before and after comparison">
+    <Column x="0" y="1332" open="true" selected="false" sform="false" next="8" name="M" caption="before and after comparison">
       <Subcolumn vislevel="3">
         <Row popup="false" name="M1">
           <Rhs vislevel="2" flags="5">
@@ -1521,7 +1521,7 @@
         </Row>
         <Row popup="false" name="M3">
           <Rhs vislevel="2" flags="5">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="4" window_y="136" window_width="750" window_height="750" image_left="827" image_top="319" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="G11"/>
           </Rhs>
@@ -1581,7 +1581,7 @@
                     </Row>
                     <Row name="expr">
                       <Rhs vislevel="0" flags="4">
-                        <iText formula="300"/>
+                        <iText formula="333"/>
                       </Rhs>
                     </Row>
                     <Row name="super">
