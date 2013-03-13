@@ -64,14 +64,14 @@
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="368" image_top="1686" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2001" image_top="1191" image_mag="2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="C7"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B2">
           <Rhs vislevel="1" flags="1">
-            <iArrow left="258" top="1590" width="16" height="947">
+            <iArrow left="1993" top="579" width="-4" height="619">
               <iRegiongroup/>
             </iArrow>
             <Subcolumn vislevel="0"/>
@@ -80,7 +80,7 @@
         </Row>
         <Row popup="false" name="B3">
           <Rhs vislevel="3" flags="7">
-            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2208" image_top="2022" image_mag="-6" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="1882" image_top="674" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1">
               <Row name="x">
                 <Rhs vislevel="0" flags="4">
@@ -125,7 +125,7 @@
         </Row>
         <Row popup="false" name="B4">
           <Rhs vislevel="1" flags="1">
-            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="264" top="1572" width="648" height="990">
+            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="1988" top="570" width="426" height="642">
               <iRegiongroup/>
             </iRegion>
             <Subcolumn vislevel="0"/>
@@ -155,7 +155,7 @@
               </Row>
               <Row name="angle">
                 <Rhs vislevel="1" flags="1">
-                  <Option caption="Rotate by" labelsn="4" labels0="Don't rotate" labels1="90 degrees clockwise" labels2="180 degrees" labels3="90 degrees anticlockwise" value="1"/>
+                  <Option caption="Rotate by" labelsn="4" labels0="Don't rotate" labels1="90 degrees clockwise" labels2="180 degrees" labels3="90 degrees anticlockwise" value="3"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -377,12 +377,12 @@
           <Rhs vislevel="1" flags="1">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_idas_1.TIF&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_01_idas.tif&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F10">
           <Rhs vislevel="1" flags="1">
-            <Toggle caption="correct macbeth with flatfield" value="true"/>
+            <Toggle caption="correct macbeth with flatfield" value="false"/>
             <Subcolumn vislevel="0"/>
             <iText formula="Widget_toggle_item.action"/>
           </Rhs>
@@ -413,7 +413,7 @@
         </Row>
         <Row popup="false" name="F11">
           <Rhs vislevel="1" flags="1">
-            <Toggle caption="correct image with flatfield" value="true"/>
+            <Toggle caption="correct image with flatfield" value="false"/>
             <Subcolumn vislevel="0"/>
             <iText formula="Widget_toggle_item.action"/>
           </Rhs>
@@ -427,7 +427,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="568" open="true" selected="true" sform="false" next="6" name="G" caption="result">
+    <Column x="0" y="568" open="true" selected="false" sform="false" next="6" name="G" caption="result">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G1">
           <Rhs vislevel="2" flags="5">
