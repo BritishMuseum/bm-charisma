@@ -12,7 +12,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="1840" image_top="1595" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_viscalib.TIF&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_viscalib.tif&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A4">
@@ -24,12 +24,12 @@
           <Rhs vislevel="1" flags="1">
             <iImage window_x="2" window_y="83" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_dug11_1-full.TIF&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_02_rg830_02.tif&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A7">
           <Rhs vislevel="1" flags="1">
-            <Toggle caption="correct UV or iR image with flatfield" value="true"/>
+            <Toggle caption="correct UV or iR image with flatfield" value="false"/>
             <Subcolumn vislevel="0"/>
             <iText formula="Widget_toggle_item.action"/>
           </Rhs>
@@ -161,7 +161,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="3234" y="0" open="true" selected="true" sform="false" next="24" name="F" caption="create false-colour image">
+    <Column x="3234" y="0" open="true" selected="false" sform="false" next="24" name="F" caption="create false-colour image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F2">
           <Rhs vislevel="2" flags="5">
@@ -180,13 +180,13 @@
         <Row popup="false" name="F9">
           <Rhs vislevel="1" flags="1">
             <iText formula="Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0"/>
-            <Option caption="Combine bands as" labelsn="2" labels0="X - RG" labels1="GB - X" value="1"/>
+            <Option caption="Combine bands as" labelsn="2" labels0="X - RG" labels1="GB - X" value="0"/>
             <Subcolumn vislevel="0"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F10">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="1152" window_y="77" window_width="750" window_height="1024" image_left="2208" image_top="2736" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="1152" window_y="27" window_width="750" window_height="1024" image_left="1840" image_top="2280" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="[F1?0 ++ F2?0 ++ F2?1, F2?1 ++ F2?2 ++ F1?2]?F9"/>
           </Rhs>
@@ -197,14 +197,14 @@
       <Subcolumn vislevel="3">
         <Row popup="false" name="G1">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="48" window_y="167" window_width="750" window_height="750" image_left="203" image_top="2596" image_mag="8" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="48" window_y="167" window_width="750" window_height="750" image_left="142" image_top="3806" image_mag="8" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="C3"/>
           </Rhs>
         </Row>
         <Row popup="false" name="G2">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="984" window_y="138" window_width="750" window_height="750" image_left="3772" image_top="205" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="136" window_y="135" window_width="750" window_height="750" image_left="138" image_top="3821" image_mag="8" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="I5"/>
           </Rhs>
@@ -232,7 +232,7 @@
               </Row>
               <Row name="ap1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="3759" top="206" width="0" height="0">
+                  <iArrow left="1994" top="578" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -241,7 +241,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="3752" top="203" width="0" height="0">
+                  <iArrow left="1999" top="564" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -250,7 +250,7 @@
               </Row>
               <Row name="ap2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="207" top="2594" width="0" height="0">
+                  <iArrow left="152" top="3804" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -259,7 +259,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="184" top="2600" width="0" height="0">
+                  <iArrow left="149" top="3810" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -474,11 +474,16 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2067" y="0" open="true" selected="false" sform="false" next="26" name="O" caption="match brightness of mono to vis">
+    <Column x="2067" y="0" open="true" selected="true" sform="false" next="27" name="O" caption="match brightness of mono to vis">
       <Subcolumn vislevel="3">
+        <Row popup="false" name="O26">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Place O4 along edge of spectralon target&quot;"/>
+          </Rhs>
+        </Row>
         <Row popup="false" name="O1">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="1472" image_top="1276" image_mag="-4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="2154" image_top="2189" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="C3"/>
           </Rhs>
@@ -492,28 +497,28 @@
         </Row>
         <Row popup="false" name="O4">
           <Rhs vislevel="2" flags="5">
-            <iArrow left="306" top="1512" width="-12" height="-1342">
+            <iArrow left="2044" top="2388" width="0" height="-884">
               <iRegiongroup/>
             </iArrow>
             <Subcolumn vislevel="0"/>
             <iText formula="Arrow O1 336 1904 4 (-1308)"/>
           </Rhs>
         </Row>
+        <Row popup="false" name="O6">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Surround spectralon target with O7&quot;"/>
+          </Rhs>
+        </Row>
         <Row popup="false" name="O5">
           <Rhs vislevel="3" flags="7">
-            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="1472" image_top="1276" image_mag="-4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="1472" image_top="1876" image_mag="-4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
             <iText formula="Image_transform_item.Rotate_item.Straighten_item.action O4"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="O6">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot;Mark edge of spectralon target:&quot;"/>
-          </Rhs>
-        </Row>
         <Row popup="false" name="O7">
           <Rhs vislevel="1" flags="1">
-            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="328" top="180" width="324" height="1324">
+            <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="2052" top="1504" width="208" height="872">
               <iRegiongroup/>
             </iRegion>
             <Subcolumn vislevel="0"/>

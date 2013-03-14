@@ -33,20 +33,28 @@ website.
 There are versions for Windows and OS X. On Linux, start your package manager
 and search for "nip2".
 
-# Colour calibration with calibrate.ws
+# Colour calibration with viscalib.ws
 
-Use workspace calibrate.ws to perform visible-light colour calibration of one
+Use workspace viscalib.ws to perform visible-light colour calibration of one
 image or a set of images.
 
 # False-colour images with false-colour.
 
 Use workspace false-colour.ws to prepare UV or IR false-colour images.
 
-# UV-fluorescence images with uvlumcalib.ws
+It can also prepare calibrated UV and IR reflectance images.
+
+# UV-fluorescence images with uvlcalib.ws
 
 Use this workspace to calibrate UV-induced fluorescence images. The workspace
 can use the Kubelka-Munk colour-mixing equations to generate fluorescence-only
 images. 
+
+# IR-fluorescence images with uvlcalib.ws
+
+Use this workspace to calibrate visible-induced IR-fluorescence images. The 
+workspace can use the Kubelka-Munk colour-mixing equations to generate 
+fluorescence-only images. 
 
 
 

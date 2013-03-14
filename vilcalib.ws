@@ -119,7 +119,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_uvrcalib.TIF&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_02_irrcalib.tif&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -164,7 +164,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1033" y="0" open="true" selected="false" sform="false" next="4" name="O" caption="import UV-induced luminescence image to linear light">
+    <Column x="1051" y="0" open="true" selected="false" sform="false" next="4" name="O" caption="import UV-induced luminescence image to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O1">
           <Rhs vislevel="2" flags="5">
@@ -223,7 +223,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1033" y="525" open="true" selected="false" sform="false" next="8" name="P" caption="flatfield image">
+    <Column x="1051" y="525" open="true" selected="false" sform="false" next="8" name="P" caption="flatfield image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="P1">
           <Rhs vislevel="2" flags="5">
@@ -310,7 +310,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2030" y="0" open="true" selected="false" sform="false" next="22" name="Q" caption="remove residual visible light">
+    <Column x="2048" y="0" open="true" selected="false" sform="false" next="22" name="Q" caption="remove stray IR light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q21">
           <Rhs vislevel="1" flags="4">
@@ -328,7 +328,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="736" image_top="1490" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="A5"/>
+            <iText formula="B3"/>
           </Rhs>
         </Row>
         <Row popup="false" name="Q14">
@@ -510,7 +510,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1607" y="0" open="true" selected="false" sform="false" next="4" name="T" caption="align vis-induced IR luminescence to visible">
+    <Column x="1625" y="0" open="true" selected="false" sform="false" next="4" name="T" caption="align vis-induced IR luminescence to visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="T1">
           <Rhs vislevel="2" flags="5">
@@ -603,7 +603,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1607" y="582" open="true" selected="false" sform="false" next="4" name="U" caption="test alignment">
+    <Column x="1625" y="582" open="true" selected="false" sform="false" next="4" name="U" caption="test alignment">
       <Subcolumn vislevel="3">
         <Row popup="false" name="U1">
           <Rhs vislevel="2" flags="5">
@@ -628,7 +628,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2030" y="1948" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
+    <Column x="2048" y="1921" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="W1">
           <Rhs vislevel="2" flags="5">
@@ -697,7 +697,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="3035" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+    <Column x="3114" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
@@ -839,7 +839,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="3035" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="3114" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -908,7 +908,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2624" y="0" open="true" selected="false" sform="false" next="9" name="K" caption="import UV reflectance to linear light">
+    <Column x="2642" y="0" open="true" selected="false" sform="false" next="9" name="K" caption="import UV reflectance to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K1">
           <Rhs vislevel="2" flags="5">
@@ -920,7 +920,7 @@
         <Row popup="false" name="K2">
           <Rhs vislevel="3" flags="7">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0">
+            <Subcolumn vislevel="1">
               <Row name="x">
                 <Rhs vislevel="0" flags="4">
                   <iText/>
@@ -961,7 +961,7 @@
         <Row popup="false" name="K3">
           <Rhs vislevel="3" flags="7">
             <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1327" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
+            <Subcolumn vislevel="1"/>
             <iText formula="Colour_convert_item.XYZ_item.action K2"/>
           </Rhs>
         </Row>
@@ -1037,7 +1037,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="1223" open="true" selected="true" sform="false" next="9" name="M" caption="before and after comparison">
+    <Column x="0" y="1078" open="true" selected="false" sform="false" next="9" name="M" caption="before and after comparison">
       <Subcolumn vislevel="3">
         <Row popup="false" name="M1">
           <Rhs vislevel="2" flags="5">
@@ -1147,7 +1147,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2030" y="1187" open="true" selected="false" sform="false" next="7" name="C" caption="take just X of XYZ IR reflectance">
+    <Column x="2048" y="1187" open="true" selected="false" sform="false" next="7" name="C" caption="take just X of XYZ IR reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="2" flags="5">
@@ -1238,6 +1238,140 @@
             <iImage window_x="2" window_y="80" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="C5 * C3"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="579" y="525" open="true" selected="false" sform="false" next="4" name="B" caption="import IRR to linear light">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="B1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="F15"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B2">
+          <Rhs vislevel="3" flags="7">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="embedded">
+                <Rhs vislevel="1" flags="1">
+                  <Toggle caption="Use embedded profile if possible" value="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="profile">
+                <Rhs vislevel="1" flags="1">
+                  <Pathname/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="intent">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_icc_item.Import_item.action B1"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B3">
+          <Rhs vislevel="3" flags="7">
+            <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="2208" image_top="2022" image_mag="-6" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="6.2592732780298705" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Colour_convert_item.XYZ_item.action B2"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="722" y="1286" open="true" selected="true" sform="false" next="3" name="D">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="D1">
+          <Rhs vislevel="2" flags="5">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="M4"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="D2">
+          <Rhs vislevel="3" flags="7">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="3" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="which">
+                <Rhs vislevel="1" flags="1">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="size">
+                <Rhs vislevel="1" flags="1">
+                  <Expression caption="Resize to (pixels)"/>
+                  <Subcolumn vislevel="0">
+                    <Row name="caption">
+                      <Rhs vislevel="0" flags="4">
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                    <Row name="expr">
+                      <Rhs vislevel="0" flags="4">
+                        <iText formula="333"/>
+                      </Rhs>
+                    </Row>
+                    <Row name="super">
+                      <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                  </Subcolumn>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="aspect">
+                <Rhs vislevel="1" flags="1">
+                  <Toggle/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="interp">
+                <Rhs vislevel="2" flags="6">
+                  <Subcolumn vislevel="1"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Image_transform_item.Resize_item.Size_item.action D1"/>
           </Rhs>
         </Row>
       </Subcolumn>
