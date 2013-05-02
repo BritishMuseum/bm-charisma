@@ -117,9 +117,9 @@
         </Row>
         <Row popup="false" name="F15">
           <Rhs vislevel="1" flags="1">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_02_irrcalib.tif&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/65346_irrcalib.tif&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -1242,7 +1242,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2833" y="1538" open="true" selected="true" sform="false" next="7" name="E" caption="take just X of XYZ IR image">
+    <Column x="2833" y="1538" open="true" selected="false" sform="false" next="7" name="E" caption="take just X of XYZ IR image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E1">
           <Rhs vislevel="2" flags="5">

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.30.0">
-  <Workspace window_x="0" window_y="0" window_width="1398" window_height="1050" filename="$HOME/GIT/bm-workspaces/uvlumcalib.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumcalib" caption="Default empty workspace">
+  <Workspace window_x="0" window_y="0" window_width="1398" window_height="1050" filename="$HOME/GIT/bm-workspaces/uvlcalib.ws" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlcalib" caption="Default empty workspace">
     <Column x="770" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="import macbeth to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -449,7 +449,7 @@
           <Rhs vislevel="1" flags="1">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_uvrcalib.TIF&quot;"/>
+            <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/images/perugino_headman_uv_reflectance.tif&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -1233,7 +1233,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="5720" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+    <Column x="5757" y="0" open="true" selected="true" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
@@ -1375,7 +1375,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="5720" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="5757" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -1444,7 +1444,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="5188" y="0" open="true" selected="true" sform="false" next="9" name="K" caption="import UV reflectance to linear light">
+    <Column x="5188" y="0" open="true" selected="false" sform="false" next="9" name="K" caption="import UV reflectance to linear light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K1">
           <Rhs vislevel="2" flags="5">

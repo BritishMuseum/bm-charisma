@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.33.0">
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="images" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="images" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="12" name="A" caption="visible-light reflectance images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A2">
@@ -210,7 +210,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="import" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="import" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="12" name="A" caption="import and flatfield Macbeth">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -1427,7 +1427,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="markup" caption="Mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="markup" caption="Mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="B" caption="straighten and extract Macbeth">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B7">
@@ -1549,7 +1549,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="604" y="0" open="true" selected="true" sform="false" next="29" name="O" caption="straighten and extract spectralon">
+    <Column x="682" y="2" open="true" selected="true" sform="false" next="29" name="O" caption="straighten and extract spectralon">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O26">
           <Rhs vislevel="1" flags="4">
@@ -1701,7 +1701,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="macbeth" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="macbeth" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="D" caption="generate calibration matrix">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
@@ -2166,7 +2166,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="uvlumwhite" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="uvlumwhite" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="true" sform="false" next="1" name="A" caption="visible illuminant colour temperature">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -2300,7 +2300,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="align" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="align" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="transform IR reflectance to match visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -2314,7 +2314,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1316" window_y="161" window_width="750" window_height="750" image_left="3765" image_top="213" image_mag="16" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.C11"/>
+            <iText formula="import.G13"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A3">
@@ -2419,7 +2419,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="47" window_y="208" window_width="750" window_height="750" image_left="284" image_top="1508" image_mag="2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.D11"/>
+            <iText formula="import.H5"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B3">
@@ -2629,7 +2629,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="938" window_y="349" window_width="750" window_height="750" image_left="4140" image_top="630" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.F11"/>
+            <iText formula="import.I5"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C3">
@@ -2722,8 +2722,8 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
-    <Column x="2493" y="0" open="true" selected="false" sform="false" next="7" name="K" caption="make IR falsecolour">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="2674" y="0" open="true" selected="false" sform="false" next="7" name="K" caption="make IR falsecolour">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K1">
           <Rhs vislevel="2" flags="5">
@@ -2806,7 +2806,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="684" y="0" open="true" selected="false" sform="false" next="28" name="O" caption="match brightness of IR to vis">
+    <Column x="770" y="0" open="true" selected="false" sform="false" next="28" name="O" caption="match brightness of IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O17">
           <Rhs vislevel="3" flags="7">
@@ -2938,7 +2938,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1931" y="0" open="true" selected="true" sform="false" next="1" name="A" caption="match brightness of UV to vis">
+    <Column x="2108" y="0" open="true" selected="true" sform="false" next="1" name="A" caption="match brightness of UV to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A7">
           <Rhs vislevel="3" flags="7">
@@ -3009,7 +3009,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2899" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="make UV falsecolour">
+    <Column x="3080" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="make UV falsecolour">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
@@ -3096,7 +3096,7 @@
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="368" image_top="1369" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <iImage window_x="776" window_y="193" window_width="750" window_height="750" image_left="2208" image_top="1914" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="align.A3"/>
           </Rhs>
@@ -3139,7 +3139,7 @@
           </Rhs>
         </Row>
         <Row popup="false" name="C7">
-          <Rhs vislevel="0" flags="4">
+          <Rhs vislevel="2" flags="5">
             <iArrow>
               <iRegiongroup/>
             </iArrow>
@@ -3377,7 +3377,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1247" y="0" open="true" selected="false" sform="false" next="1" name="D" caption="get spectralon from UV reflectance">
+    <Column x="1337" y="0" open="true" selected="false" sform="false" next="1" name="D" caption="get spectralon from UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
           <Rhs vislevel="2" flags="5">
@@ -3424,7 +3424,7 @@
           </Rhs>
         </Row>
         <Row popup="false" name="D7">
-          <Rhs vislevel="0" flags="4">
+          <Rhs vislevel="2" flags="5">
             <iArrow>
               <iRegiongroup/>
             </iArrow>
@@ -3663,7 +3663,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumkm" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumkm" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="770" y="0" open="true" selected="true" sform="false" next="47" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
@@ -3826,7 +3826,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1743" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+    <Column x="1364" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
@@ -3846,7 +3846,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="K7"/>
+            <iText formula="falsecolour.A16"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J21">
@@ -3968,7 +3968,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1743" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="1364" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -4037,87 +4037,6 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1364" y="0" open="true" selected="false" sform="false" next="9" name="K" caption="convert UV reflectance to E">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="K3">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1327" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="falsecolour.A16"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K5">
-          <Rhs vislevel="3" flags="7">
-            <Colour/>
-            <Subcolumn vislevel="1">
-              <Row name="default_colour">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="default_value">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <Colour/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="space">
-                <Rhs vislevel="1" flags="1">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="colour">
-                <Rhs vislevel="1" flags="1">
-                  <Expression caption="Colour value"/>
-                  <Subcolumn vislevel="0">
-                    <Row name="caption">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="expr">
-                      <Rhs vislevel="0" flags="4">
-                        <iText formula="[100, 0, 0]"/>
-                      </Rhs>
-                    </Row>
-                    <Row name="super">
-                      <Rhs vislevel="1" flags="4">
-                        <Subcolumn vislevel="0"/>
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                  </Subcolumn>
-                  <iText/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_new_item.Widget_colour_item.action"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K6">
-          <Rhs vislevel="3" flags="7">
-            <Colour/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.XYZ_item.action K5"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K7">
-          <Rhs vislevel="2" flags="5">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="K6 * (K3 / K6)?2"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
     <Column x="0" y="0" open="true" selected="false" sform="false" next="32" name="C" caption="get spectralon from UV-induced visible lum">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
@@ -4165,7 +4084,7 @@
           </Rhs>
         </Row>
         <Row popup="false" name="C7">
-          <Rhs vislevel="0" flags="4">
+          <Rhs vislevel="2" flags="5">
             <iArrow>
               <iRegiongroup/>
             </iArrow>
@@ -4404,8 +4323,8 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilumkm" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
-    <Column x="684" y="0" open="true" selected="false" sform="false" next="46" name="Q" caption="remove residual visible light">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilumkm" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="770" y="0" open="true" selected="false" sform="false" next="46" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
           <Rhs vislevel="2" flags="5">
@@ -4491,13 +4410,13 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="684" y="1584" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
+    <Column x="770" y="967" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="W1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1337" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="A6"/>
+            <iText formula="Q4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="W2">
@@ -4560,7 +4479,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1216" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+    <Column x="1364" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
@@ -4702,7 +4621,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1216" y="1431" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="1364" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -4818,7 +4737,7 @@
           </Rhs>
         </Row>
         <Row popup="false" name="C7">
-          <Rhs vislevel="0" flags="4">
+          <Rhs vislevel="2" flags="5">
             <iArrow>
               <iRegiongroup/>
             </iArrow>
@@ -5056,103 +4975,8 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="684" y="893" open="true" selected="false" sform="false" next="7" name="A" caption="take just X of XYZ IR reflectance">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="A1">
-          <Rhs vislevel="2" flags="5">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="Q4"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="A2">
-          <Rhs vislevel="3" flags="7">
-            <Colour/>
-            <Subcolumn vislevel="1">
-              <Row name="default_colour">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="default_value">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <Colour/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="space">
-                <Rhs vislevel="1" flags="1">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="colour">
-                <Rhs vislevel="1" flags="1">
-                  <Expression caption="Colour value"/>
-                  <Subcolumn vislevel="0">
-                    <Row name="caption">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="expr">
-                      <Rhs vislevel="0" flags="4">
-                        <iText formula="[100, 0, 0]"/>
-                      </Rhs>
-                    </Row>
-                    <Row name="super">
-                      <Rhs vislevel="1" flags="4">
-                        <Subcolumn vislevel="0"/>
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                  </Subcolumn>
-                  <iText/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_new_item.Widget_colour_item.action"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="A3">
-          <Rhs vislevel="3" flags="7">
-            <Colour/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.XYZ_item.action A2"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="A4">
-          <Rhs vislevel="1" flags="1">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="A1 / A3"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="A5">
-          <Rhs vislevel="1" flags="1">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="A4?0"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="A6">
-          <Rhs vislevel="1" flags="1">
-            <iImage window_x="2" window_y="80" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="A5 * A3"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="29" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="results" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="results" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="7" name="A" caption="Macbeth image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A5">
