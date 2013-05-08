@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.33.0">
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="images" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="12" name="A" caption="visible-light reflectance images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A2">
@@ -72,7 +72,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="532" y="0" open="true" selected="false" sform="false" next="14" name="C" caption="IR and UV reflectance images">
+    <Column x="491" y="0" open="true" selected="false" sform="false" next="14" name="C" caption="IR and UV reflectance images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="1" flags="4">
@@ -143,7 +143,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1190" y="0" open="true" selected="true" sform="false" next="9" name="D" caption="luminescence images">
+    <Column x="1087" y="0" open="true" selected="true" sform="false" next="9" name="D" caption="luminescence images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
           <Rhs vislevel="1" flags="4">
@@ -210,28 +210,28 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="import" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="linear" caption="linearize and flatfield all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="12" name="A" caption="import and flatfield Macbeth">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A1"/>
+            <iText formula="input.A1"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A4">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="360" image_top="329" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A3"/>
+            <iText formula="input.A3"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A5">
           <Rhs vislevel="2" flags="5">
             <Toggle/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A8"/>
+            <iText formula="input.A8"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A11">
@@ -358,27 +358,27 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="532" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="import and flatfield visible-light image">
+    <Column x="491" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="import and flatfield visible-light image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A7"/>
+            <iText formula="input.A7"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="360" image_top="329" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A10"/>
+            <iText formula="input.A10"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B3">
           <Rhs vislevel="2" flags="5">
             <Toggle/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A6"/>
+            <iText formula="input.A6"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B4">
@@ -505,27 +505,27 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1063" y="0" open="true" selected="false" sform="false" next="1" name="C" caption="import and flatfield IR reflectance image">
+    <Column x="982" y="0" open="true" selected="false" sform="false" next="1" name="C" caption="import and flatfield IR reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.C2"/>
+            <iText formula="input.C2"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="360" image_top="329" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.C11"/>
+            <iText formula="input.C11"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C3">
           <Rhs vislevel="2" flags="5">
             <Toggle/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.C3"/>
+            <iText formula="input.C3"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C4">
@@ -652,27 +652,27 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1994" y="0" open="true" selected="false" sform="false" next="1" name="D" caption="import and flatfield UV reflectance image">
+    <Column x="1828" y="0" open="true" selected="false" sform="false" next="1" name="D" caption="import and flatfield UV reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.C8"/>
+            <iText formula="input.C8"/>
           </Rhs>
         </Row>
         <Row popup="false" name="D2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="360" image_top="329" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.C12"/>
+            <iText formula="input.C12"/>
           </Rhs>
         </Row>
         <Row popup="false" name="D3">
           <Rhs vislevel="2" flags="5">
             <Toggle/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.C9"/>
+            <iText formula="input.C9"/>
           </Rhs>
         </Row>
         <Row popup="false" name="D4">
@@ -799,27 +799,27 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2942" y="0" open="true" selected="false" sform="false" next="1" name="E" caption="import and flatfield UV-induced visible luminescence image">
+    <Column x="2687" y="0" open="true" selected="false" sform="false" next="1" name="E" caption="import and flatfield UV-induced visible luminescence image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.D2"/>
+            <iText formula="input.D2"/>
           </Rhs>
         </Row>
         <Row popup="false" name="E2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="360" image_top="329" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.D8"/>
+            <iText formula="input.D8"/>
           </Rhs>
         </Row>
         <Row popup="false" name="E3">
           <Rhs vislevel="2" flags="5">
             <Toggle/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.D5"/>
+            <iText formula="input.D5"/>
           </Rhs>
         </Row>
         <Row popup="false" name="E4">
@@ -946,27 +946,27 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="3512" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="import and flatfield visible-induced IR luminescence image">
+    <Column x="3214" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="import and flatfield visible-induced IR luminescence image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2232" image_top="1968" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="8.5201806470589823" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.D4"/>
+            <iText formula="input.D4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="24" window_width="750" window_height="750" image_left="360" image_top="329" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.D7"/>
+            <iText formula="input.D7"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F3">
           <Rhs vislevel="2" flags="5">
             <Toggle/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.D9"/>
+            <iText formula="input.D9"/>
           </Rhs>
         </Row>
         <Row popup="false" name="F4">
@@ -1093,7 +1093,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1606" y="0" open="true" selected="false" sform="false" next="14" name="G" caption="take just red of IR reflectance">
+    <Column x="1481" y="0" open="true" selected="false" sform="false" next="14" name="G" caption="take just red of IR reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G12">
           <Rhs vislevel="2" flags="5">
@@ -1204,7 +1204,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2562" y="0" open="true" selected="false" sform="false" next="1" name="H" caption="take just blue of UV reflectance">
+    <Column x="2348" y="0" open="true" selected="false" sform="false" next="1" name="H" caption="take just blue of UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H1">
           <Rhs vislevel="2" flags="5">
@@ -1315,7 +1315,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="4107" y="0" open="true" selected="true" sform="false" next="1" name="I" caption="take just red of IR reflectance">
+    <Column x="3764" y="0" open="true" selected="true" sform="false" next="1" name="I" caption="take just red of IR reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -1427,7 +1427,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="markup" caption="Mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="B" caption="straighten and extract Macbeth">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B7">
@@ -1439,7 +1439,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2208" image_top="2022" image_mag="-6" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.A10"/>
+            <iText formula="linear.A10"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B2">
@@ -1549,7 +1549,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="682" y="2" open="true" selected="true" sform="false" next="29" name="O" caption="straighten and extract spectralon">
+    <Column x="583" y="0" open="true" selected="true" sform="false" next="29" name="O" caption="straighten and extract spectralon">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O26">
           <Rhs vislevel="1" flags="4">
@@ -1560,7 +1560,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="596" image_top="319" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.A10"/>
+            <iText formula="linear.A10"/>
           </Rhs>
         </Row>
         <Row popup="false" name="O4">
@@ -1701,7 +1701,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="macbeth" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="viscalib" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="D" caption="generate calibration matrix">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
@@ -1789,14 +1789,14 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1287" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.B11"/>
+            <iText formula="linear.B11"/>
           </Rhs>
         </Row>
         <Row popup="false" name="E26">
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="images.A7"/>
+            <iText formula="linear.A7"/>
           </Rhs>
         </Row>
         <Row popup="false" name="E2">
@@ -1880,7 +1880,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1130" y="0" open="true" selected="true" sform="false" next="32" name="C" caption="get spectralon from calibrated visible">
+    <Column x="1134" y="0" open="true" selected="true" sform="false" next="32" name="C" caption="get spectralon from calibrated visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="2" flags="5">
@@ -2166,7 +2166,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="uvlumwhite" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="uvlcalib" caption="UV-induced visible luminescence calibration" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="true" sform="false" next="1" name="A" caption="visible illuminant colour temperature">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -2253,20 +2253,20 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="464" y="0" open="true" selected="false" sform="false" next="7" name="R" caption="apply camera calibration and white-point adjustment">
+    <Column x="468" y="0" open="true" selected="false" sform="false" next="7" name="R" caption="apply camera calibration and white-point adjustment">
       <Subcolumn vislevel="3">
         <Row popup="false" name="R1">
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.E11"/>
+            <iText formula="linear.E11"/>
           </Rhs>
         </Row>
         <Row popup="false" name="R2">
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.D8"/>
+            <iText formula="viscalib.D8"/>
           </Rhs>
         </Row>
         <Row popup="false" name="R5">
@@ -2300,21 +2300,21 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="align" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="transform IR reflectance to match visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="816" window_y="125" window_width="750" window_height="750" image_left="3817" image_top="236" image_mag="2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
+            <iText formula="viscalib.E29"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1316" window_y="161" window_width="750" window_height="750" image_left="3765" image_top="213" image_mag="16" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.G13"/>
+            <iText formula="linear.G13"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A3">
@@ -2406,20 +2406,20 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="511" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="transform UV reflectance to match visible">
+    <Column x="675" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="transform UV reflectance to match visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1110" window_y="149" window_width="750" window_height="750" image_left="325" image_top="1507" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
+            <iText formula="viscalib.E29"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="47" window_y="208" window_width="750" window_height="750" image_left="284" image_top="1508" image_mag="2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.H5"/>
+            <iText formula="linear.H5"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B3">
@@ -2511,20 +2511,20 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1002" y="0" open="true" selected="false" sform="false" next="7" name="T" caption="align UV-induced vis luminescence to visible">
+    <Column x="1350" y="0" open="true" selected="false" sform="false" next="7" name="T" caption="align UV-induced vis luminescence to visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="T1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="134" window_y="163" window_width="750" window_height="750" image_left="4140" image_top="614" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
+            <iText formula="viscalib.E29"/>
           </Rhs>
         </Row>
         <Row popup="false" name="T2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="938" window_y="349" window_width="750" window_height="750" image_left="4140" image_top="630" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="uvlumwhite.R6"/>
+            <iText formula="uvlcalib.R6"/>
           </Rhs>
         </Row>
         <Row popup="false" name="T3">
@@ -2616,20 +2616,20 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1476" y="2" open="true" selected="true" sform="false" next="1" name="C" caption="align vis-induced IR luminescence to visible">
+    <Column x="2025" y="0" open="true" selected="true" sform="false" next="1" name="C" caption="align vis-induced IR luminescence to visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="134" window_y="163" window_width="750" window_height="750" image_left="4140" image_top="614" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
+            <iText formula="viscalib.E29"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="938" window_y="349" window_width="750" window_height="750" image_left="4140" image_top="630" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="import.I5"/>
+            <iText formula="linear.I5"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C3">
@@ -2722,97 +2722,14 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
-    <Column x="2674" y="0" open="true" selected="false" sform="false" next="7" name="K" caption="make IR falsecolour">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="K1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="2208" image_top="1914" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="O25"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K2">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot;Visible is a 16-bit image?&quot;"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K3">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="macbeth.E25"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K4">
-          <Rhs vislevel="3" flags="7">
-            <iImage window_x="1" window_y="55" window_width="750" window_height="750" image_left="736" image_top="1438" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1">
-              <Row name="x">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="profile">
-                <Rhs vislevel="1" flags="1">
-                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="intent">
-                <Rhs vislevel="1" flags="1">
-                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="depth">
-                <Rhs vislevel="1" flags="1">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if K3 then 1 else 0)"/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_icc_item.Export_item.action K1"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K8">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="2" window_y="27" window_width="750" window_height="1024" image_left="1130" image_top="1686" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E28"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K10">
-          <Rhs vislevel="1" flags="1">
-            <iText formula="Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0"/>
-            <Option caption="Combine bands as" labelsn="2" labels0="X - RG" labels1="GB - X" value="0"/>
-            <Subcolumn vislevel="0"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="K11">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1152" window_y="27" window_width="750" window_height="1024" image_left="1840" image_top="2280" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="[K4?0 ++ K8?0 ++ K8?1, K8?1 ++ K8?2 ++ K4?2]?K10"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="770" y="0" open="true" selected="false" sform="false" next="28" name="O" caption="match brightness of IR to vis">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="specden" caption="spectral density" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="684" y="0" open="true" selected="false" sform="false" next="28" name="O" caption="match brightness of IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O17">
           <Rhs vislevel="3" flags="7">
             <Matrix/>
             <Subcolumn vislevel="1"/>
-            <iText formula="macbeth.C11"/>
+            <iText formula="viscalib.C11"/>
           </Rhs>
         </Row>
         <Row popup="false" name="O16">
@@ -2938,13 +2855,13 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2108" y="0" open="true" selected="true" sform="false" next="1" name="A" caption="match brightness of UV to vis">
+    <Column x="1931" y="0" open="true" selected="true" sform="false" next="1" name="A" caption="match brightness of UV to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A7">
           <Rhs vislevel="3" flags="7">
             <Matrix/>
             <Subcolumn vislevel="1"/>
-            <iText formula="macbeth.C11"/>
+            <iText formula="viscalib.C11"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A8">
@@ -3005,89 +2922,6 @@
             <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="368" image_top="669" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="D1 * A14 + A15"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="3080" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="make UV falsecolour">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="B1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="2208" image_top="1914" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="A16"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="B2">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot;Visible is a 16-bit image?&quot;"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="B3">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="macbeth.E25"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="B4">
-          <Rhs vislevel="3" flags="7">
-            <iImage window_x="1" window_y="55" window_width="750" window_height="750" image_left="736" image_top="1438" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1">
-              <Row name="x">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="profile">
-                <Rhs vislevel="1" flags="1">
-                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="intent">
-                <Rhs vislevel="1" flags="1">
-                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="depth">
-                <Rhs vislevel="1" flags="1">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if B3 then 1 else 0)"/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_icc_item.Export_item.action B1"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="B5">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="2" window_y="27" window_width="750" window_height="1024" image_left="1130" image_top="1686" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E28"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="B6">
-          <Rhs vislevel="1" flags="1">
-            <iText formula="Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0"/>
-            <Option caption="Combine bands as" labelsn="2" labels0="X - RG" labels1="GB - X" value="1"/>
-            <Subcolumn vislevel="0"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="B7">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1152" window_y="27" window_width="750" window_height="1024" image_left="1840" image_top="2280" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="[B4?0 ++ B5?0 ++ B5?1, B5?1 ++ B5?2 ++ B4?2]?B6"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -3377,7 +3211,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1337" y="0" open="true" selected="false" sform="false" next="1" name="D" caption="get spectralon from UV reflectance">
+    <Column x="1247" y="0" open="true" selected="false" sform="false" next="1" name="D" caption="get spectralon from UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
           <Rhs vislevel="2" flags="5">
@@ -3663,8 +3497,176 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlumkm" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
-    <Column x="770" y="0" open="true" selected="true" sform="false" next="47" name="Q" caption="remove residual visible light">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="0" y="0" open="true" selected="false" sform="false" next="7" name="K" caption="make IR falsecolour">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="K1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="2208" image_top="1914" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="specden.O25"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K2">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Visible is a 16-bit image?&quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K3">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="viscalib.E25"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K4">
+          <Rhs vislevel="3" flags="7">
+            <iImage window_x="1" window_y="55" window_width="750" window_height="750" image_left="736" image_top="1438" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="profile">
+                <Rhs vislevel="1" flags="1">
+                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="intent">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="depth">
+                <Rhs vislevel="2" flags="5">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if K3 then 1 else 0)"/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_icc_item.Export_item.action K1"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K8">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="2" window_y="27" window_width="750" window_height="1024" image_left="1130" image_top="1686" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="viscalib.E28"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K10">
+          <Rhs vislevel="1" flags="1">
+            <iText formula="Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0"/>
+            <Option caption="Combine bands as" labelsn="2" labels0="X - RG" labels1="GB - X" value="0"/>
+            <Subcolumn vislevel="0"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="K11">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1152" window_y="27" window_width="750" window_height="1024" image_left="1840" image_top="2280" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="[K4?0 ++ K8?0 ++ K8?1, K8?1 ++ K8?2 ++ K4?2]?K10"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="533" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="make UV falsecolour">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="B1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="2208" image_top="1914" image_mag="-6" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="specden.A16"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B2">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Visible is a 16-bit image?&quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B3">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="viscalib.E25"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B4">
+          <Rhs vislevel="3" flags="7">
+            <iImage window_x="1" window_y="55" window_width="750" window_height="750" image_left="736" image_top="1438" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="profile">
+                <Rhs vislevel="1" flags="1">
+                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="intent">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="depth">
+                <Rhs vislevel="2" flags="5">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if B3 then 1 else 0)"/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_icc_item.Export_item.action B1"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B5">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="2" window_y="27" window_width="750" window_height="1024" image_left="1130" image_top="1686" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="viscalib.E28"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B6">
+          <Rhs vislevel="1" flags="1">
+            <iText formula="Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0"/>
+            <Option caption="Combine bands as" labelsn="2" labels0="X - RG" labels1="GB - X" value="1"/>
+            <Subcolumn vislevel="0"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="B7">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1152" window_y="27" window_width="750" window_height="1024" image_left="1840" image_top="2280" image_mag="-5" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="[B4?0 ++ B5?0 ++ B5?1, B5?1 ++ B5?2 ++ B4?2]?B6"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+  </Workspace>
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlstray" caption="remove stray light from UV-induced visible luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="684" y="0" open="true" selected="true" sform="false" next="47" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
           <Rhs vislevel="2" flags="5">
@@ -3677,7 +3679,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="736" image_top="1490" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
+            <iText formula="viscalib.E29"/>
           </Rhs>
         </Row>
         <Row popup="false" name="Q29">
@@ -3689,7 +3691,7 @@
           <Rhs vislevel="0" flags="4">
             <Matrix/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.C11"/>
+            <iText formula="viscalib.C11"/>
           </Rhs>
         </Row>
         <Row popup="false" name="Q31">
@@ -3757,7 +3759,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="770" y="1137" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
+    <Column x="684" y="1028" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="W1">
           <Rhs vislevel="2" flags="5">
@@ -3773,7 +3775,7 @@
         </Row>
         <Row popup="false" name="W3">
           <Rhs vislevel="1" flags="4">
-            <iText formula="macbeth.E25"/>
+            <iText formula="viscalib.E25"/>
           </Rhs>
         </Row>
         <Row popup="false" name="W4">
@@ -3822,217 +3824,6 @@
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
             <iText formula="Colour_convert_item.sRGB_item.action W4"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="1364" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="J1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="368" image_top="669" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J2">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="173" window_y="141" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="Q4"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J20">
-          <Rhs vislevel="2" flags="5">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="falsecolour.A16"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J21">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot; &quot;"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J3">
-          <Rhs vislevel="3" flags="7">
-            <Colour/>
-            <Subcolumn vislevel="1">
-              <Row name="default_colour">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="default_value">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <Colour/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="space">
-                <Rhs vislevel="1" flags="1">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="colour">
-                <Rhs vislevel="1" flags="1">
-                  <Expression caption="Colour value"/>
-                  <Subcolumn vislevel="0">
-                    <Row name="caption">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="expr">
-                      <Rhs vislevel="0" flags="4">
-                        <iText formula="[100, 0, 0]"/>
-                      </Rhs>
-                    </Row>
-                    <Row name="super">
-                      <Rhs vislevel="1" flags="4">
-                        <Subcolumn vislevel="0"/>
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                  </Subcolumn>
-                  <iText/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_new_item.Widget_colour_item.action"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J4">
-          <Rhs vislevel="3" flags="7">
-            <Colour/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.XYZ_item.action J3"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J5">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="733" window_y="95" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="J1 / J4"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J13">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1085" window_y="100" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="(1 - J5) ** 2 / (2 * J5)"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J14">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="27.295051938857174" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="1 / (1 + (J13 / (J13 + 2)) ** 0.5)"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J15">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1069" window_y="70" window_width="750" window_height="750" image_left="1239" image_top="1749" image_mag="-3" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="75.401759631879372" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="J20 / J4"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J18">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="4.9842813694681078" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="(1 - J15) ** 2 / (2 * J15)"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J19">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="11.952023241406405" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="1 / (1 + ( (J13 * (J13 + 2)) / (J18 * (J18 + 2)) ) ** 0.5)"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="J17">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="663" window_y="179" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="0.5 * J2 / (J14 * J19)"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="1364" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="I1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2208" image_top="2022" image_mag="-6" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="J17"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="I2">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot;Source image is 16-bit?&quot;"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="I3">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="macbeth.E25"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="I4">
-          <Rhs vislevel="3" flags="7">
-            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1">
-              <Row name="x">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="profile">
-                <Rhs vislevel="1" flags="1">
-                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="intent">
-                <Rhs vislevel="1" flags="1">
-                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="depth">
-                <Rhs vislevel="2" flags="5">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if I3 then 1 else 0)"/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_icc_item.Export_item.action I1"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="I5">
-          <Rhs vislevel="3" flags="7">
-            <iImage window_x="1091" window_y="84" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.sRGB_item.action I1"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -4323,183 +4114,28 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilumkm" caption="Default empty workspace" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
-    <Column x="770" y="0" open="true" selected="false" sform="false" next="46" name="Q" caption="remove residual visible light">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="Q1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="4" window_y="22" window_width="750" window_height="750" image_left="368" image_top="1220" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="C1"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q13">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="736" image_top="1490" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q29">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot; &quot;"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q30">
-          <Rhs vislevel="0" flags="4">
-            <Matrix/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.C11"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q31">
-          <Rhs vislevel="0" flags="4">
-            <Matrix/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="C11"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q38">
-          <Rhs vislevel="3" flags="7">
-            <Matrix/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Matrix_extract_item.Rows_item.action Q30"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q39">
-          <Rhs vislevel="3" flags="7">
-            <Matrix/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Matrix_extract_item.Rows_item.action Q31"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q44">
-          <Rhs vislevel="1" flags="1">
-            <Vector/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="Vector Q38.value?0"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q2">
-          <Rhs vislevel="2" flags="5">
-            <Vector/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="Vector Q39.value?0"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q45">
-          <Rhs vislevel="1" flags="1">
-            <Vector/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="100 * Q2 / Q44"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q3">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="(Q45 / 100) * Q13"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="Q4">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="1" window_y="57" window_width="750" window_height="750" image_left="2078" image_top="2282" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="Q1 - Q3"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="770" y="967" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="W1">
-          <Rhs vislevel="2" flags="5">
-            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1337" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="0"/>
-            <iText formula="Q4"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="W2">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="&quot;Source image is 16-bit?&quot;"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="W3">
-          <Rhs vislevel="1" flags="4">
-            <iText formula="macbeth.E25"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="W4">
-          <Rhs vislevel="3" flags="7">
-            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1">
-              <Row name="x">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="profile">
-                <Rhs vislevel="1" flags="1">
-                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="intent">
-                <Rhs vislevel="1" flags="1">
-                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="depth">
-                <Rhs vislevel="2" flags="5">
-                  <Option/>
-                  <Subcolumn vislevel="0"/>
-                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if W3 then 1 else 0)"/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Colour_icc_item.Export_item.action W1"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="W5">
-          <Rhs vislevel="3" flags="7">
-            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.sRGB_item.action W4"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="1364" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlkm" caption="Kubelka-Munk processing of UVL image" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="368" image_top="669" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E29"/>
+            <iText formula="viscalib.E29"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J2">
           <Rhs vislevel="2" flags="5">
             <iImage window_x="173" window_y="141" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Q4"/>
+            <iText formula="uvlstray.Q4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J20">
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="falsecolour.O25"/>
+            <iText formula="specden.A16"/>
           </Rhs>
         </Row>
         <Row popup="false" name="J21">
@@ -4621,7 +4257,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1364" y="1538" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+    <Column x="388" y="0" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="5">
@@ -4637,7 +4273,7 @@
         </Row>
         <Row popup="false" name="I3">
           <Rhs vislevel="1" flags="4">
-            <iText formula="macbeth.E25"/>
+            <iText formula="viscalib.E25"/>
           </Rhs>
         </Row>
         <Row popup="false" name="I4">
@@ -4686,6 +4322,163 @@
             <iImage window_x="1091" window_y="84" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
             <iText formula="Colour_convert_item.sRGB_item.action I1"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+  </Workspace>
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilstray" caption="remove stray light from visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="684" y="0" open="true" selected="false" sform="false" next="46" name="Q" caption="remove residual visible light">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="Q1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="4" window_y="22" window_width="750" window_height="750" image_left="368" image_top="1220" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="C1"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q13">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="736" image_top="1490" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="viscalib.E29"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q29">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot; &quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q30">
+          <Rhs vislevel="0" flags="4">
+            <Matrix/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="viscalib.C11"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q31">
+          <Rhs vislevel="0" flags="4">
+            <Matrix/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="C11"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q38">
+          <Rhs vislevel="3" flags="7">
+            <Matrix/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Matrix_extract_item.Rows_item.action Q30"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q39">
+          <Rhs vislevel="3" flags="7">
+            <Matrix/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Matrix_extract_item.Rows_item.action Q31"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q44">
+          <Rhs vislevel="1" flags="1">
+            <Vector/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="Vector Q38.value?0"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q2">
+          <Rhs vislevel="2" flags="5">
+            <Vector/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="Vector Q39.value?0"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q45">
+          <Rhs vislevel="1" flags="1">
+            <Vector/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="100 * Q2 / Q44"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q3">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="29" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="(Q45 / 100) * Q13"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="Q4">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1" window_y="57" window_width="750" window_height="750" image_left="2078" image_top="2282" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="Q1 - Q3"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="684" y="873" open="true" selected="false" sform="false" next="6" name="W" caption="back to RGB">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="W1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="368" image_top="1337" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="Q4"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="W2">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Source image is 16-bit?&quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="W3">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="viscalib.E25"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="W4">
+          <Rhs vislevel="3" flags="7">
+            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="profile">
+                <Rhs vislevel="1" flags="1">
+                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="intent">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="depth">
+                <Rhs vislevel="2" flags="5">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if W3 then 1 else 0)"/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_icc_item.Export_item.action W1"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="W5">
+          <Rhs vislevel="3" flags="7">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Colour_convert_item.sRGB_item.action W4"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -4976,7 +4769,220 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="results" caption="Default empty tab" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilkm" caption="Kubelka-Munk processing of visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
+    <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="J1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="368" image_top="669" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="viscalib.E29"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J2">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="173" window_y="141" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="vilstray.Q4"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J20">
+          <Rhs vislevel="2" flags="5">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="specden.O25"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J21">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot; &quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J3">
+          <Rhs vislevel="3" flags="7">
+            <Colour/>
+            <Subcolumn vislevel="1">
+              <Row name="default_colour">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="default_value">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <Colour/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="space">
+                <Rhs vislevel="1" flags="1">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="colour">
+                <Rhs vislevel="1" flags="1">
+                  <Expression caption="Colour value"/>
+                  <Subcolumn vislevel="0">
+                    <Row name="caption">
+                      <Rhs vislevel="0" flags="4">
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                    <Row name="expr">
+                      <Rhs vislevel="0" flags="4">
+                        <iText formula="[100, 0, 0]"/>
+                      </Rhs>
+                    </Row>
+                    <Row name="super">
+                      <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                  </Subcolumn>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_new_item.Widget_colour_item.action"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J4">
+          <Rhs vislevel="3" flags="7">
+            <Colour/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Colour_convert_item.XYZ_item.action J3"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J5">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="733" window_y="95" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="J1 / J4"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J13">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1085" window_y="100" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="(1 - J5) ** 2 / (2 * J5)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J14">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="27.295051938857174" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="1 / (1 + (J13 / (J13 + 2)) ** 0.5)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J15">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="1069" window_y="70" window_width="750" window_height="750" image_left="1239" image_top="1749" image_mag="-3" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="75.401759631879372" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="J20 / J4"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J18">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="4.9842813694681078" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="(1 - J15) ** 2 / (2 * J15)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J19">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="1" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="11.952023241406405" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="1 / (1 + ( (J13 * (J13 + 2)) / (J18 * (J18 + 2)) ) ** 0.5)"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="J17">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="663" window_y="179" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="0.5 * J2 / (J14 * J19)"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="388" y="0" open="true" selected="false" sform="false" next="6" name="I" caption="back to RGB">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="I1">
+          <Rhs vislevel="2" flags="5">
+            <iImage window_x="0" window_y="24" window_width="750" window_height="750" image_left="2208" image_top="2022" image_mag="-6" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="J17"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="I2">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Source image is 16-bit?&quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="I3">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="viscalib.E25"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="I4">
+          <Rhs vislevel="3" flags="7">
+            <iImage window_x="528" window_y="27" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="profile">
+                <Rhs vislevel="1" flags="1">
+                  <Pathname caption="Output profile" value="$VIPSHOME/share/nip2/data/sRGB.icm"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="intent">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Render intent" labelsn="4" labels0="Perceptual" labels1="Relative" labels2="Saturation" labels3="Absolute" value="1"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="depth">
+                <Rhs vislevel="2" flags="5">
+                  <Option/>
+                  <Subcolumn vislevel="0"/>
+                  <iText formula="Option (_ &quot;Output depth&quot;) [_ &quot;8 bit&quot;, _ &quot;16 bit&quot;] (if I3 then 1 else 0)"/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_icc_item.Export_item.action I1"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="I5">
+          <Rhs vislevel="3" flags="7">
+            <iImage window_x="1091" window_y="84" window_width="750" window_height="750" image_left="2576" image_top="2233" image_mag="-7" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="1"/>
+            <iText formula="Colour_convert_item.sRGB_item.action I1"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+  </Workspace>
+  <Workspace window_x="256" window_y="142" window_width="1480" window_height="1050" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="7" name="A" caption="Macbeth image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A5">
@@ -4988,7 +4994,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="macbeth.E28"/>
+            <iText formula="viscalib.E28"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A6">
@@ -5000,12 +5006,12 @@
           <Rhs vislevel="3" flags="7">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="1"/>
-            <iText formula="macbeth.D8"/>
+            <iText formula="viscalib.D8"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="666" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
+    <Column x="593" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="1" flags="4">
@@ -5057,7 +5063,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1061" y="0" open="true" selected="true" sform="false" next="12" name="C" caption="luminescence iamges">
+    <Column x="935" y="0" open="true" selected="true" sform="false" next="12" name="C" caption="luminescence iamges">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="1" flags="4">
@@ -5068,7 +5074,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="uvlumkm.W4"/>
+            <iText formula="uvlstray.W4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C9">
@@ -5080,7 +5086,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="368" image_top="337" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="uvlumkm.Q46"/>
+            <iText formula="uvlstray.Q46"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C3">
@@ -5092,7 +5098,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="uvlumkm.I4"/>
+            <iText formula="uvlkm.I4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C5">
@@ -5104,7 +5110,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="vilumkm.W4"/>
+            <iText formula="vilstray.W4"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C7">
@@ -5116,7 +5122,7 @@
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="vilumkm.I4"/>
+            <iText formula="vilkm.I4"/>
           </Rhs>
         </Row>
       </Subcolumn>
