@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.33.0">
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="603" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;mkim x y b options&#10;    = Image (image_new 10 10 3&#10;        (get_option $format) (get_option $coding) (get_option $type)&#10;        (get_option $pixel)&#10;        (get_option $xoffset) (get_option $yoffset))&#10;{&#10;    defaults = [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;    get_option f&#10;        = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;        = hits?0&#10;    {&#10;        hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;    }&#10;}&#10;&#10;Get_image i label = &#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#9;image_prompt = &quot;image of &quot; ++ label; &#10;&#9;image = i;&#10;&#9;flatten = Toggle (&quot;Correct &quot; ++ label ++ &quot; image with flatfield&quot;) false;&#10;    flatfield_prompt = &quot;Flatfield image for &quot; ++ label;&#10;&#9;flatfield_image = mkim image.width image.height image.bands [$pixel =&gt; 200];&#10;}&#10;&#10;Get_image_pair label = &#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Get_image (mkim 10 10 3 []) (label ++ &quot; with calibration targets&quot;);&#10;&#9;plain = Get_image (targets.image) label;&#10;}&#10;&#10;&#10;&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;};&#10;&#10;Pair_load label = class&#10;    Pair label image flatfield {&#10;    _vislevel = 3;&#10;&#10;    image = mkim 100 100 3 [];&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim 100 100 3 [$pixel =&gt; 200];&#10;}&#10;&#9;&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="687" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="603" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;};&#10;&#10;Pair_flatfield _i label = class&#10;    Pair label image flatfield {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [] 10 10 3, _i == NULL&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 200] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class&#10;&#9;Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;&#10;depth = if I2 then 16 else 8;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="597" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="E2">
+        <Row popup="false" name="E1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1">
               <Row name="label">
@@ -12,30 +12,22 @@
                 </Rhs>
               </Row>
               <Row name="super">
-                <Rhs vislevel="0" flags="4">
+                <Rhs vislevel="1" flags="4">
+                  <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="targets">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -46,19 +38,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_rg830_sp.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -69,26 +56,17 @@
                   <iText/>
                 </Rhs>
               </Row>
-              <Row name="plain">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+              <Row name="object">
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -99,19 +77,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_rg830.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -123,14 +96,14 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Get_image_pair &quot;IR reflectance&quot;"/>
+            <iText formula="Pair_load &quot;IR reflectance&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1351" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
+    <Column x="1202" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="F2">
+        <Row popup="false" name="F1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1">
               <Row name="label">
@@ -139,30 +112,22 @@
                 </Rhs>
               </Row>
               <Row name="super">
-                <Rhs vislevel="0" flags="4">
+                <Rhs vislevel="1" flags="4">
+                  <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="targets">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -173,19 +138,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_dug11x_sp.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -196,26 +156,17 @@
                   <iText/>
                 </Rhs>
               </Row>
-              <Row name="plain">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+              <Row name="object">
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -226,19 +177,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_dug11x.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -250,14 +196,14 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Get_image_pair &quot;UV reflectance&quot;"/>
+            <iText formula="Pair_load &quot;UV reflectance&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2020" y="0" open="true" selected="false" sform="false" next="1" name="G" caption="UV-induced visible luminescence">
+    <Column x="1815" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="G2">
+        <Row popup="false" name="G1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1">
               <Row name="label">
@@ -266,30 +212,22 @@
                 </Rhs>
               </Row>
               <Row name="super">
-                <Rhs vislevel="0" flags="4">
+                <Rhs vislevel="1" flags="4">
+                  <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="targets">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -300,19 +238,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_idas_kv418_sp.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -323,26 +256,17 @@
                   <iText/>
                 </Rhs>
               </Row>
-              <Row name="plain">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+              <Row name="object">
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -353,19 +277,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_idas_kv418.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -377,56 +296,48 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Get_image_pair &quot;UV-induced visible luminescence&quot;"/>
+            <iText formula="Pair_load &quot;UV-induced visible luminescence&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2799" y="0" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
+    <Column x="2504" y="0" open="true" selected="false" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="H2">
+        <Row popup="false" name="H1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Get_image_pair &quot;visible-induced IR luminescence&quot;"/>
+            <iText formula="Pair_load &quot;visible-induced IR luminescence&quot;"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="visible-light reflectance">
+    <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="A" caption="visible-light reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
-          <Rhs vislevel="3" flags="6">
-            <Subcolumn vislevel="2">
+          <Rhs vislevel="2" flags="6">
+            <Subcolumn vislevel="1">
               <Row name="label">
                 <Rhs vislevel="0" flags="4">
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="super">
-                <Rhs vislevel="0" flags="4">
+                <Rhs vislevel="1" flags="4">
+                  <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="targets">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -437,19 +348,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_idas_sp.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -460,26 +366,17 @@
                   <iText/>
                 </Rhs>
               </Row>
-              <Row name="plain">
-                <Rhs vislevel="2" flags="6">
-                  <Subcolumn vislevel="1">
-                    <Row name="i">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
+              <Row name="object">
+                <Rhs vislevel="3" flags="6">
+                  <Subcolumn vislevel="2">
                     <Row name="label">
                       <Rhs vislevel="0" flags="4">
                         <iText/>
                       </Rhs>
                     </Row>
                     <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="image_prompt">
                       <Rhs vislevel="1" flags="4">
+                        <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
@@ -490,19 +387,14 @@
                         <iText formula="Image_file &quot;$HOME/GIT/bm-workspaces/pozzo/pozzo23_idas.tif&quot;"/>
                       </Rhs>
                     </Row>
-                    <Row name="flatten">
+                    <Row name="use_flatfield">
                       <Rhs vislevel="1" flags="1">
                         <Toggle/>
                         <Subcolumn vislevel="0"/>
                         <iText/>
                       </Rhs>
                     </Row>
-                    <Row name="flatfield_prompt">
-                      <Rhs vislevel="1" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="flatfield_image">
+                    <Row name="flatfield">
                       <Rhs vislevel="1" flags="1">
                         <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
                         <Subcolumn vislevel="0"/>
@@ -514,45 +406,68 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Get_image_pair &quot;visible reflectance&quot;"/>
+            <iText formula="Pair_load &quot;visible reflectance&quot;"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="0" y="549" open="true" selected="true" sform="false" next="4" name="I" caption="save output images as 16-bits?">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="I3">
+          <Rhs vislevel="1" flags="4">
+            <iText formula="&quot;Typical input image&quot;"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="I1">
+          <Rhs vislevel="2" flags="5">
+            <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="A1.targets.image"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="I2">
+          <Rhs vislevel="2" flags="5">
+            <iText formula="Toggle &quot;Output format is 16-bit&quot; (get_format I1 == 2)"/>
+            <Toggle/>
+            <Subcolumn vislevel="0"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;correct x&#10;&#9;= wc flat?1 im, x.flatten&#10;&#9;= im&#10;{&#10;&#10;&#9;import x&#10;&#9;&#9;= icc_import_embedded Render_intent.RELATIVE x, &#10;&#9;&#9;&#9;&#9;get_header_type &quot;icc-profile-data&quot; x != 0;&#10;&#9;&#9;= icc_import &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x;&#10;&#9;import_xyz = colour_transform_to Image_type.XYZ @ import;&#10;&#10;&#9;im = import_xyz x.image;&#10;&#9;flat = import_xyz x.flatfield_image;&#10;&#10;&#9;wc w i&#10;&#9;&#9;= clip2fmt i.format (w' * i)&#10;&#9;{&#10;&#9;&#9;fac = mean w / max w;&#10;&#9;&#9;w' = fac * (max w / w);&#10;&#9;}&#10;}&#10;&#10;Correct_pair x = &#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = x.label;&#10;&#9;targets_prompt = x.targets.image_prompt;&#10;&#9;targets = correct x.targets;&#10;&#9;plain_prompt = x.plain.image_prompt;&#10;&#9;plain = correct x.plain;&#10;}&#10;&#10;Mono_pair band x =&#10;&#9;class { &#10;&#9;_vislevel = 2;&#10;&#10;&#9;_lab = Colour &quot;Lab&quot; [100, 0, 0];&#10;&#9;_xyz = colour_transform_to Image_type.XYZ _lab;&#10;&#10;&#9;mono x = _xyz * (x / _xyz) ? band;&#10;&#10;&#9;label = x.label;&#10;&#9;targets_prompt = x.targets_prompt ++ &quot;, just band &quot; ++ print band;&#10;&#9;targets = mono x.targets;&#10;&#9;plain_prompt = x.plain_prompt ++ &quot;, just band &quot; ++ print band;&#10;&#9;plain = mono x.plain;&#10;}" name="linear" caption="linearize and flatfield all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="0" y="0" open="true" selected="false" sform="false" next="8" name="J" caption="import and flatfield">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="607" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;};&#10;&#10;&#10;// correct :: Pair_flatfield -&gt; Image&#10;correct pff&#10;&#9;= wc flat?1 im, pff.use_flatfield&#10;&#9;= im&#10;{&#10;&#9;import x&#10;&#9;&#9;= icc_import_embedded Render_intent.RELATIVE x, &#10;&#9;&#9;&#9;&#9;get_header_type &quot;icc-profile-data&quot; x != 0;&#10;&#9;&#9;= icc_import &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x;&#10;&#9;import_xyz = colour_transform_to Image_type.XYZ @ import;&#10;&#10;&#9;im = import_xyz pff.image;&#10;&#9;flat = import_xyz pff.flatfield;&#10;&#10;&#9;wc w i&#10;&#9;&#9;= clip2fmt i.format (w' * i)&#10;&#9;{&#10;&#9;&#9;fac = mean w / max w;&#10;&#9;&#9;w' = fac * (max w / w);&#10;&#9;}&#10;}&#10;&#10;// Correct_pair :: Pair_load -&gt; Pair &#10;Correct_pair pl = class &#10;&#9;Pair pl.label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;targets_label = pl.targets.label;&#10;&#9;targets = correct pl.targets;&#10;&#9;object_label = pl.object.label;&#10;&#9;object = correct pl.object;&#10;}&#10;&#10;// Mono_pair :: Pair -&gt; Pair&#10;Mono_pair band p =&#9;class &#10;&#9;Pair p.label targets object { &#10;&#9;_vislevel = 2;&#10;&#10;&#9;_lab = Colour &quot;Lab&quot; [100, 0, 0];&#10;&#9;_xyz = colour_transform_to Image_type.XYZ _lab;&#10;&#9;mono x = _xyz * (x / _xyz) ? band;&#10;&#10;&#9;targets_label = p.targets_label ++ &quot;, just band &quot; ++ print band;&#10;&#9;targets = mono p.targets;&#10;&#9;object_label = p.object_label ++ &quot;, just band &quot; ++ print band;&#10;&#9;object = mono p.object;&#10;}" name="linear" caption="linearize and flatfield all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="0" y="0" open="true" selected="false" sform="false" next="18" name="J" caption="import and flatfield">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J2">
           <Rhs vislevel="2" flags="4">
-            <iText formula="map Correct_pair [input.A1, input.E2, input.F2, input.G2, input.H2]"/>
+            <iText formula="map Correct_pair [input.A1, input.E1, input.F1, input.G1, input.H1]"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="J3">
+        <Row popup="false" name="J13">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
             <iText formula="J2?0"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="J4">
+        <Row popup="false" name="J14">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
             <iText formula="J2?1"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="J5">
+        <Row popup="false" name="J15">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
             <iText formula="J2?2"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="J6">
+        <Row popup="false" name="J16">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
             <iText formula="J2?3"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="J7">
+        <Row popup="false" name="J17">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
             <iText formula="J2?4"/>
@@ -560,35 +475,41 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="577" y="0" open="true" selected="true" sform="false" next="7" name="K" caption="mono-ize IR and UV images">
+    <Column x="522" y="0" open="true" selected="true" sform="false" next="10" name="K" caption="mono-ize IR and UV images">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="K4">
+        <Row popup="false" name="K8">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Mono_pair 0 J4"/>
+            <iText formula="Mono_pair 0 J14"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="K5">
+        <Row popup="false" name="K2">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Mono_pair 2 J5"/>
+            <iText formula="Mono_pair 2 J15"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="K6">
+        <Row popup="false" name="K9">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Mono_pair 0 J7"/>
+            <iText formula="Mono_pair 0 J17"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;&#10;straighten arrow&#10;&#9;= rotate Interpolate_bilinear angle'' arrow.image&#10;{&#10;&#9;x = arrow.width;&#10;&#9;y = arrow.height;&#10;&#10;&#9;angle = im (polar (x, y));&#10;&#9;&#9;&#10;&#9;angle'&#10;&#9;&#9;= angle - 360, angle &gt; 315&#10;&#9;&#9;= angle - 180, angle &gt; 135&#10;&#9;&#9;= angle;&#10;&#9;&#9;&#10;&#9;angle''&#10;&#9;&#9;= -angle', angle' &gt;= (-45) &amp;&amp; angle' &lt; 45&#10;&#9;&#9;= 90 - angle';&#10;}&#10;&#10;rotate_widget = Image_transform_item.Rotate_item.Fixed_item.rotate_widget;&#10;&#10;Markup default pair =&#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Drag line along edge of &quot; ++ pair.label ++ &quot; chart&quot;;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h, NULL == default&#10;&#9;&#9;= Arrow straighten_image default.line.left default.line.top &#10;&#9;&#9;&#9;default.line.width default.line.height&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the &quot; ++ pair.label ++ &quot; chart with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h, NULL == default&#10;&#9;&#9;= Region box_image default.box.left default.box.top &#10;&#9;&#9;&#9;default.box.width default.box.height &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the &quot; ++ pair.label ++ &quot; chart to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box, NULL == default&#10;&#9;&#9;= rotate_widget default.rotate.angle.value box;&#10;}&#10;&#10;&#10;&#10;&#9;" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="783" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;};&#10;&#10;straighten arrow&#10;&#9;= rotate Interpolate_bilinear angle'' arrow.image&#10;{&#10;&#9;x = arrow.width;&#10;&#9;y = arrow.height;&#10;&#10;&#9;angle = im (polar (x, y));&#10;&#9;&#9;&#10;&#9;angle'&#10;&#9;&#9;= angle - 360, angle &gt; 315&#10;&#9;&#9;= angle - 180, angle &gt; 135&#10;&#9;&#9;= angle;&#10;&#9;&#9;&#10;&#9;angle''&#10;&#9;&#9;= -angle', angle' &gt;= (-45) &amp;&amp; angle' &lt; 45&#10;&#9;&#9;= 90 - angle';&#10;}&#10;&#10;rotate_widget = Image_transform_item.Rotate_item.Fixed_item.rotate_widget;&#10;&#10;Markup type default pair =&#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of &quot; ++ type ++ &quot; in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h, NULL == default&#10;&#9;&#9;= Arrow straighten_image default.line.left default.line.top &#10;&#9;&#9;&#9;default.line.width default.line.height&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the &quot; ++ type ++ &quot; with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h, NULL == default&#10;&#9;&#9;= Region box_image default.box.left default.box.top &#10;&#9;&#9;&#9;default.box.width default.box.height &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the &quot; ++ type ++ &quot; to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box, NULL == default&#10;&#9;&#9;= rotate_widget default.rotate.angle.value box;&#10;}&#10;&#10;&#10;&#10;&#9;" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="21" name="A" caption="mark position of Macbeth in visible-light reflectance image">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="A20">
+        <Row popup="false" name="A1">
           <Rhs vislevel="2" flags="6">
+            <iText formula="Markup &quot;Macbeth&quot; NULL linear.J13"/>
             <Subcolumn vislevel="1">
+              <Row name="type">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
               <Row name="default">
                 <Rhs vislevel="0" flags="4">
                   <iText/>
@@ -611,14 +532,14 @@
               </Row>
               <Row name="straighten_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="654" image_top="547" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="441" image_top="461" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="line">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="451" top="570" width="252" height="12">
+                  <iArrow left="450" top="568" width="252" height="13">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -632,14 +553,14 @@
               </Row>
               <Row name="box_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="649" image_top="693" image_mag="2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="930" image_top="773" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="box">
                 <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="486" top="629" width="234" height="157">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="483" top="630" width="243" height="163">
                     <iRegiongroup/>
                   </iRegion>
                   <Subcolumn vislevel="0"/>
@@ -684,16 +605,21 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Markup NULL linear.J3"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="687" y="0" open="true" selected="false" sform="false" next="8" name="C" caption="mark position of reflectance standards in IR reflectance image">
+    <Column x="679" y="0" open="true" selected="false" sform="false" next="8" name="C" caption="mark position of reflectance standards in IR reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C7">
           <Rhs vislevel="2" flags="6">
+            <iText formula="Markup &quot;reflectance standard&quot; B1 linear.K8"/>
             <Subcolumn vislevel="1">
+              <Row name="type">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
               <Row name="default">
                 <Rhs vislevel="2" flags="4">
                   <iText/>
@@ -716,14 +642,14 @@
               </Row>
               <Row name="straighten_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1040" image_top="566" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="1161" image_top="710" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="line">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="902" top="612" width="477" height="29">
+                  <iArrow left="904" top="610" width="499" height="28">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -737,14 +663,14 @@
               </Row>
               <Row name="box_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1109" image_top="605" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="1061" image_top="662" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="box">
                 <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="934" top="647" width="440" height="106">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="929" top="644" width="447" height="112">
                     <iRegiongroup/>
                   </iRegion>
                   <Subcolumn vislevel="0"/>
@@ -764,16 +690,201 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Markup D1 linear.K4"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="549" open="true" selected="false" sform="false" next="4" name="D" caption="mark position of reflectance standards in visible-light reflectance image">
+    <Column x="1359" y="0" open="true" selected="false" sform="false" next="1" name="E" caption="mark position of reflectance standards in UV reflectance image">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="D1">
+        <Row popup="false" name="E1">
           <Rhs vislevel="2" flags="6">
+            <iText formula="Markup &quot;reflectance standard&quot; B1 linear.K2"/>
             <Subcolumn vislevel="1">
+              <Row name="type">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="default">
+                <Rhs vislevel="2" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="pair">
+                <Rhs vislevel="2" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="straighten_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="straighten_image">
+                <Rhs vislevel="1" flags="1">
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="1072" image_top="540" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="line">
+                <Rhs vislevel="1" flags="1">
+                  <iArrow left="911" top="614" width="430" height="24">
+                    <iRegiongroup/>
+                  </iArrow>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="enclose_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="box_image">
+                <Rhs vislevel="1" flags="1">
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="1017" image_top="613" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="box">
+                <Rhs vislevel="1" flags="1">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="907" top="648" width="447" height="109">
+                    <iRegiongroup/>
+                  </iRegion>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="rotate_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="rotate">
+                <Rhs vislevel="3" flags="7">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="1"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="2038" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="mark position of reflectance standards in UV-induced visible luminescence image">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="F1">
+          <Rhs vislevel="2" flags="6">
+            <iText formula="Markup &quot;reflectance standard&quot; B1 linear.J16"/>
+            <Subcolumn vislevel="1">
+              <Row name="type">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="default">
+                <Rhs vislevel="2" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="pair">
+                <Rhs vislevel="2" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="straighten_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="straighten_image">
+                <Rhs vislevel="1" flags="1">
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="842" image_top="607" image_mag="4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="line">
+                <Rhs vislevel="1" flags="1">
+                  <iArrow left="830" top="587" width="534" height="58">
+                    <iRegiongroup/>
+                  </iArrow>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="enclose_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="box_image">
+                <Rhs vislevel="1" flags="1">
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="1085" image_top="628" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="box">
+                <Rhs vislevel="1" flags="1">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="883" top="646" width="447" height="112">
+                    <iRegiongroup/>
+                  </iRegion>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="rotate_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="rotate">
+                <Rhs vislevel="3" flags="7">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="1"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="2717" y="0" open="true" selected="false" sform="false" next="1" name="G" caption="mark position of reflectance standards in visible-induced IR luminescence image">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="G1">
+          <Rhs vislevel="2" flags="6">
+            <iText formula="Markup &quot;reflectance standard&quot; B1 linear.K9"/>
+            <Subcolumn vislevel="1"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="0" y="549" open="true" selected="false" sform="false" next="1" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="B1">
+          <Rhs vislevel="2" flags="6">
+            <iText formula="Markup &quot;reflectance standard&quot; NULL linear.J13"/>
+            <Subcolumn vislevel="1">
+              <Row name="type">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
               <Row name="default">
                 <Rhs vislevel="0" flags="4">
                   <iText/>
@@ -796,14 +907,14 @@
               </Row>
               <Row name="straighten_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1172" image_top="611" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="998" image_top="641" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="line">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="901" top="622" width="460" height="19">
+                  <iArrow left="893" top="622" width="414" height="17">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -817,14 +928,14 @@
               </Row>
               <Row name="box_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1176" image_top="698" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="450" window_y="104" window_width="750" window_height="750" image_left="1109" image_top="642" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="box">
                 <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="917" top="647" width="440" height="109">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="916" top="648" width="447" height="112">
                     <iRegiongroup/>
                   </iRegion>
                   <Subcolumn vislevel="0"/>
@@ -839,40 +950,14 @@
               <Row name="rotate">
                 <Rhs vislevel="3" flags="7">
                   <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="1">
-                    <Row name="default">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="x">
-                      <Rhs vislevel="0" flags="4">
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="super">
-                      <Rhs vislevel="0" flags="4">
-                        <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                        <Subcolumn vislevel="0"/>
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                    <Row name="angle">
-                      <Rhs vislevel="1" flags="1">
-                        <Option caption="Rotate by" labelsn="4" labels0="Don't rotate" labels1="90 degrees clockwise" labels2="180 degrees" labels3="90 degrees anticlockwise" value="0"/>
-                        <Subcolumn vislevel="0"/>
-                        <iText/>
-                      </Rhs>
-                    </Row>
-                  </Subcolumn>
+                  <Subcolumn vislevel="1"/>
                   <iText/>
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Markup NULL linear.J3"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="D3">
+        <Row popup="false" name="B2">
           <Rhs vislevel="3" flags="7">
             <Matrix/>
             <Subcolumn vislevel="1">
@@ -937,189 +1022,19 @@
                 </Rhs>
               </Row>
             </Subcolumn>
-            <iText formula="Colour_chart_to_matrix_item.action D1.rotate"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="1367" y="0" open="true" selected="false" sform="false" next="1" name="E" caption="mark position of reflectance standards in UV reflectance image">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="E1">
-          <Rhs vislevel="2" flags="6">
-            <Subcolumn vislevel="1">
-              <Row name="default">
-                <Rhs vislevel="2" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="pair">
-                <Rhs vislevel="2" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="straighten_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="straighten_image">
-                <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1040" image_top="566" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="line">
-                <Rhs vislevel="1" flags="1">
-                  <iArrow left="886" top="612" width="472" height="24">
-                    <iRegiongroup/>
-                  </iArrow>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="enclose_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="box_image">
-                <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1109" image_top="605" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="box">
-                <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="904" top="647" width="440" height="106">
-                    <iRegiongroup/>
-                  </iRegion>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="rotate_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="rotate">
-                <Rhs vislevel="3" flags="7">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="1"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Markup D1 linear.K5"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="2046" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="mark position of reflectance standards in UV-induced visible luminescence image">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="F1">
-          <Rhs vislevel="2" flags="6">
-            <Subcolumn vislevel="1">
-              <Row name="default">
-                <Rhs vislevel="2" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="pair">
-                <Rhs vislevel="2" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="straighten_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="straighten_image">
-                <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="814" image_top="552" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="line">
-                <Rhs vislevel="1" flags="1">
-                  <iArrow left="831" top="584" width="532" height="62">
-                    <iRegiongroup/>
-                  </iArrow>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="enclose_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="box_image">
-                <Rhs vislevel="1" flags="1">
-                  <iImage window_x="486" window_y="211" window_width="750" window_height="750" image_left="1045" image_top="617" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="box">
-                <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="886" top="652" width="452" height="101">
-                    <iRegiongroup/>
-                  </iRegion>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="rotate_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="rotate">
-                <Rhs vislevel="3" flags="7">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="1"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Markup D1 linear.J6"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="2725" y="0" open="true" selected="true" sform="false" next="1" name="G" caption="mark position of reflectance standards in visible-induced IR luminescence image">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="G1">
-          <Rhs vislevel="2" flags="6">
-            <Subcolumn vislevel="1"/>
-            <iText formula="Markup D1 linear.K6"/>
+            <iText formula="Colour_chart_to_matrix_item.action B1.rotate"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this works&#10;&#10;apply = Tasks_capture_item.Apply_calib_item.action;&#10;&#10;export depth x = icc_export depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x; &#10;&#10;to_xyz = colour_transform_to Image_type.XYZ;&#10;&#10;Apply_calib c x = &#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#9;label = x.label;&#10;&#9;depth&#10;&#9;&#9;= 16, get_format x.x.targets.image == 2&#10;&#9;&#9;= 8;&#10;&#10;&#9;_calib_targets = apply c x.targets;&#10;&#9;targets = to_xyz _calib_targets; &#10;&#9;_calib_plain = apply c x.plain;&#10;&#9;plain = to_xyz _calib_plain; &#10;&#10;}&#10;&#10;&#9;" name="viscalib" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="752" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this works&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;apply = Tasks_capture_item.Apply_calib_item.action;&#10;&#10;export x = icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x; &#10;&#10;apply_xyz c x = colour_transform_to Image_type.XYZ (apply c x);&#10;&#10;Apply_calib c p = class &#10;&#9;Pair p.label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;targets_label = p.targets_label ++ &quot;, colour-calibrated&quot;;&#10;&#9;targets = apply_xyz c p.targets;&#10;&#9;object_label = p.object_label ++ &quot;, colour-calibrated&quot;;&#10;&#9;object = apply_xyz c p.object;&#10;}&#10;&#10;&#9;" name="viscalib" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="D" caption="generate calibration matrix">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
           <Rhs vislevel="2" flags="5">
             <Subcolumn vislevel="0"/>
-            <iText formula="markup.A20.rotate"/>
+            <iText formula="markup.A1.rotate"/>
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
           </Rhs>
         </Row>
@@ -1195,28 +1110,28 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="949" y="0" open="true" selected="true" sform="false" next="32" name="C" caption="get reflectance standards from calibrated visible">
+    <Column x="1128" y="0" open="true" selected="true" sform="false" next="34" name="C" caption="get reflectance standards from calibrated visible">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="C1">
+        <Row popup="false" name="C33">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="markup.Markup markup.D1 H2"/>
+            <iText formula="markup.Markup &quot;reflectance standard&quot; markup.B1 H10"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="594" y="0" open="true" selected="false" sform="false" next="3" name="H" caption="calibrate visible reflectance image">
+    <Column x="594" y="0" open="true" selected="false" sform="false" next="11" name="H" caption="calibrate visible reflectance image">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="H2">
+        <Row popup="false" name="H10">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Apply_calib D8 linear.J3"/>
+            <iText formula="Apply_calib D8 linear.J13"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="526" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Apply_ct ct x = &#10;&#9;class {&#10;&#9;_vislevel = 2;&#10;&#9;label = x.label;&#10;&#10;&#9;targets = x.targets / ct;&#10;&#9;plain = x.plain / ct; &#10;&#10;}" name="uvlcalib" caption="UV-induced visible luminescence calibration" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="602" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Apply_ct ct p = class &#10;&#9;Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = p.label;&#10;&#9;targets = p.targets / ct;&#10;&#9;object = p.object / ct; &#10;&#10;}" name="uvlcalib" caption="UV-induced visible luminescence calibration" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="visible illuminant colour temperature">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -1303,38 +1218,38 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="468" y="0" open="true" selected="true" sform="false" next="10" name="R" caption="apply camera calibration and white-point adjustment">
+    <Column x="468" y="0" open="true" selected="false" sform="false" next="7" name="B" caption="apply camera calibration and white-point adjustment">
       <Subcolumn vislevel="3">
-        <Row popup="false" name="R2">
+        <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
             <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
             <Subcolumn vislevel="0"/>
             <iText formula="viscalib.D8"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="R1">
+        <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="linear.J6"/>
+            <iText formula="linear.J16"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="R8">
+        <Row popup="false" name="B3">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="viscalib.Apply_calib R2 R1"/>
+            <iText formula="viscalib.Apply_calib B1 B2"/>
           </Rhs>
         </Row>
-        <Row popup="false" name="R9">
+        <Row popup="false" name="B6">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Apply_ct A9 R8"/>
+            <iText formula="Apply_ct A9 B3"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="0" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="transform IR reflectance to match visible">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="756" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair label a b = class&#10;    _Object {&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;copy x = Image (im_copy x.value);&#10;&#10;Pair_before l r a = class&#10;&#9;Pair label reference adjust {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;reference = r;&#10;&#9;adjust = a;&#10;}&#10;&#10;Match default a b = class &#10;    _result {&#10;    _vislevel = 3;&#10;&#10;&#9;ap1 &#10;        = Mark_relative a 0.25 0.25, NULL == default&#10;        = Mark a default.ap1.left default.ap1.top;&#10;    ap2&#10;        = Mark_relative a 0.75 0.75, NULL == default&#10;        = Mark a default.ap2.left default.ap2.top;&#10;    bp1&#10;        = Mark_relative b 0.25 0.25, NULL == default&#10;        = Mark b default.ap1.left default.ap1.top;&#10;    bp2&#10;        = Mark_relative b 0.75 0.75, NULL == default&#10;        = Mark b default.bp2.left default.bp2.top;&#10;&#10;    _result&#10;        = Image (im_match_linear a.value b.value&#10;                ap1.left ap1.top bp1.left bp1.top&#10;                ap2.left ap2.top bp2.left bp2.top);&#10;}   &#10;&#10;// Pair_match :: Pair -&gt; Pair -&gt; Pair&#10;Pair_match a b = class&#10;&#9;Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = &quot;adjust &quot; ++ b.label ++ &quot; to match &quot; ++ a.label;&#10;&#9;targets_before = Pair_before &quot;targets before&quot; (copy a.targets) (copy b.targets);&#10;&#9;targets = Match NULL targets_before.reference targets_before.adjust;&#10;&#9;object_before = Pair_before &quot;object before&quot; (copy a.object) (copy b.object);&#10;&#9;object = Match targets object_before.reference object_before.adjust;&#10;}&#10;&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="658" y="0" open="true" selected="false" sform="false" next="6" name="A" caption="transform IR reflectance to match visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="2" flags="5">
@@ -1439,7 +1354,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="334" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="transform UV reflectance to match visible">
+    <Column x="992" y="0" open="true" selected="false" sform="false" next="1" name="B" caption="transform UV reflectance to match visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="5">
@@ -1544,7 +1459,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="673" y="0" open="true" selected="false" sform="false" next="7" name="T" caption="align UV-induced vis luminescence to visible">
+    <Column x="1331" y="0" open="true" selected="false" sform="false" next="7" name="T" caption="align UV-induced vis luminescence to visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="T1">
           <Rhs vislevel="2" flags="5">
@@ -1649,7 +1564,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1030" y="0" open="true" selected="true" sform="false" next="1" name="C" caption="align vis-induced IR luminescence to visible">
+    <Column x="1688" y="0" open="true" selected="false" sform="false" next="1" name="C" caption="align vis-induced IR luminescence to visible">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C1">
           <Rhs vislevel="2" flags="5">
@@ -1754,8 +1669,30 @@
         </Row>
       </Subcolumn>
     </Column>
+    <Column x="0" y="0" open="true" selected="true" sform="false" next="15" name="D">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="D6">
+          <Rhs vislevel="1" flags="4">
+            <Subcolumn vislevel="0"/>
+            <iText formula="viscalib.H10"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="D2">
+          <Rhs vislevel="1" flags="4">
+            <Subcolumn vislevel="0"/>
+            <iText formula="linear.K8"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="D14">
+          <Rhs vislevel="2" flags="6">
+            <Subcolumn vislevel="1"/>
+            <iText formula="Pair_match D6 D2"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="specden" caption="spectral density" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="specden" caption="spectral density" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="296" y="0" open="true" selected="false" sform="false" next="28" name="O" caption="match brightness of IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O17">
@@ -2530,7 +2467,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="100" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="falsecolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="7" name="K" caption="make IR falsecolour">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K1">
@@ -2698,7 +2635,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlstray" caption="remove stray light from UV-induced visible luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlstray" caption="remove stray light from UV-induced visible luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="350" y="0" open="true" selected="true" sform="false" next="47" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
@@ -3147,7 +3084,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlkm" caption="Kubelka-Munk processing of UVL image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="uvlkm" caption="Kubelka-Munk processing of UVL image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
@@ -3360,7 +3297,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilstray" caption="remove stray light from visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilstray" caption="remove stray light from visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="324" y="0" open="true" selected="false" sform="false" next="46" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
@@ -3802,7 +3739,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilkm" caption="Kubelka-Munk processing of visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="426" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;" name="vilkm" caption="Kubelka-Munk processing of visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
@@ -4015,7 +3952,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="433" window_y="115" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="191" window_y="54" window_width="1817" window_height="1009" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="400" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="7" name="A" caption="Macbeth image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A5">
