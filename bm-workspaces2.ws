@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.33.0">
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;Pair_flatfield _i label = class {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [] 10 10 3, NULL == _i&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 200] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="681" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;&#10;Pair_flatfield _i label = class {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [] 10 10 3, NULL == _i&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 200] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="492" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E2">
           <Rhs vislevel="2" flags="6">
@@ -98,7 +98,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1352" y="0" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
+    <Column x="492" y="491" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F2">
           <Rhs vislevel="2" flags="6">
@@ -195,7 +195,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2031" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
+    <Column x="984" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G2">
           <Rhs vislevel="2" flags="6">
@@ -292,7 +292,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="2806" y="0" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
+    <Column x="984" y="491" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H2">
           <Rhs vislevel="2" flags="6">
@@ -399,7 +399,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="587" open="true" selected="false" sform="false" next="5" name="I" caption="save output images as 16-bits?">
+    <Column x="0" y="491" open="true" selected="false" sform="false" next="5" name="I" caption="save output images as 16-bits?">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I3">
           <Rhs vislevel="1" flags="4">
@@ -428,7 +428,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;// correct :: Pair_flatfield -&gt; Image&#10;correct pff&#10;&#9;= wc flat?1 im, pff.use_flatfield&#10;&#9;= im&#10;{&#10;&#9;import x&#10;&#9;&#9;= icc_import_embedded Render_intent.RELATIVE x, &#10;&#9;&#9;&#9;&#9;get_header_type &quot;icc-profile-data&quot; x != 0;&#10;&#9;&#9;= icc_import &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x;&#10;&#9;import_xyz = colour_transform_to Image_type.XYZ @ import;&#10;&#10;&#9;im = import_xyz pff.image;&#10;&#9;flat = import_xyz pff.flatfield;&#10;&#10;&#9;wc w i&#10;&#9;&#9;= clip2fmt i.format (w' * i)&#10;&#9;{&#10;&#9;&#9;fac = mean w / max w;&#10;&#9;&#9;w' = fac * (max w / w);&#10;&#9;}&#10;}&#10;&#10;// Correct_pair :: Pair_load -&gt; Pair &#10;Correct_pair pl = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = pl.label;&#10;&#9;targets_label = pl.targets.label;&#10;&#9;targets = correct pl.targets;&#10;&#9;object_label = pl.object.label;&#10;&#9;object = correct pl.object;&#10;}&#10;&#10;// Mono_pair :: Pair -&gt; Pair&#10;Mono_pair band p =&#9;class { &#10;&#9;_vislevel = 2;&#10;&#10;&#9;_lab = Colour &quot;Lab&quot; [100, 0, 0];&#10;&#9;_xyz = colour_transform_to Image_type.XYZ _lab;&#10;&#9;mono x = _xyz * (x / _xyz) ? band;&#10;&#10;&#9;label = p.label;&#10;&#9;targets_label = p.targets_label ++ &quot;, just band &quot; ++ print band;&#10;&#9;targets = mono p.targets;&#10;&#9;object_label = p.object_label ++ &quot;, just band &quot; ++ print band;&#10;&#9;object = mono p.object;&#10;&#10;}" name="linear" caption="linearize and flatfield all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;// correct :: Pair_flatfield -&gt; Image&#10;correct pff&#10;&#9;= wc flat?1 im, pff.use_flatfield&#10;&#9;= im&#10;{&#10;&#9;import x&#10;&#9;&#9;= icc_import_embedded Render_intent.RELATIVE x, &#10;&#9;&#9;&#9;&#9;get_header_type &quot;icc-profile-data&quot; x != 0;&#10;&#9;&#9;= icc_import &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x;&#10;&#9;import_xyz = colour_transform_to Image_type.XYZ @ import;&#10;&#10;&#9;im = import_xyz pff.image;&#10;&#9;flat = import_xyz pff.flatfield;&#10;&#10;&#9;wc w i&#10;&#9;&#9;= clip2fmt i.format (w' * i)&#10;&#9;{&#10;&#9;&#9;fac = mean w / max w;&#10;&#9;&#9;w' = fac * (max w / w);&#10;&#9;}&#10;}&#10;&#10;// Correct_pair :: Pair_load -&gt; Pair &#10;Correct_pair pl = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = pl.label;&#10;&#9;targets_label = pl.targets.label;&#10;&#9;targets = correct pl.targets;&#10;&#9;object_label = pl.object.label;&#10;&#9;object = correct pl.object;&#10;}&#10;&#10;// Mono_pair :: Pair -&gt; Pair&#10;Mono_pair band p =&#9;class { &#10;&#9;_vislevel = 2;&#10;&#10;&#9;_lab = Colour &quot;Lab&quot; [100, 0, 0];&#10;&#9;_xyz = colour_transform_to Image_type.XYZ _lab;&#10;&#9;mono x = _xyz * (x / _xyz) ? band;&#10;&#10;&#9;label = p.label;&#10;&#9;targets_label = p.targets_label ++ &quot;, just band &quot; ++ print band;&#10;&#9;targets = mono p.targets;&#10;&#9;object_label = p.object_label ++ &quot;, just band &quot; ++ print band;&#10;&#9;object = mono p.object;&#10;&#10;}" name="linear" caption="linearize and flatfield all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="18" name="J" caption="import and flatfield">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J2">
@@ -468,7 +468,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="228" y="0" open="true" selected="true" sform="false" next="10" name="K" caption="mono-ize IR and UV images">
+    <Column x="583" y="0" open="true" selected="true" sform="false" next="10" name="K" caption="mono-ize IR and UV images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K8">
           <Rhs vislevel="2" flags="6">
@@ -491,7 +491,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;straighten arrow&#10;&#9;= rotate Interpolate_bilinear angle'' arrow.image&#10;{&#10;&#9;x = arrow.width;&#10;&#9;y = arrow.height;&#10;&#10;&#9;angle = im (polar (x, y));&#10;&#9;&#9;&#10;&#9;angle'&#10;&#9;&#9;= angle - 360, angle &gt; 315&#10;&#9;&#9;= angle - 180, angle &gt; 135&#10;&#9;&#9;= angle;&#10;&#9;&#9;&#10;&#9;angle''&#10;&#9;&#9;= -angle', angle' &gt;= (-45) &amp;&amp; angle' &lt; 45&#10;&#9;&#9;= 90 - angle';&#10;}&#10;&#10;rotate_widget = Image_transform_item.Rotate_item.Fixed_item.rotate_widget;&#10;&#10;Markup_macbeth pair = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of Macbeth in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the Macbeth with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the Macbeth to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box;&#10;}&#10;&#10;Markup_reflectance default pair =&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of reflectance standard in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h, NULL == default&#10;&#9;&#9;= Arrow straighten_image default.line.left default.line.top &#10;&#9;&#9;&#9;default.line.width default.line.height&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the reflectance standard with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h, NULL == default&#10;&#9;&#9;= Region box_image default.box.left default.box.top &#10;&#9;&#9;&#9;default.box.width default.box.height &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the reflectance standard to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box, NULL == default&#10;&#9;&#9;= rotate_widget default.rotate.angle.value box;&#10;&#10;&#9;pacross = Expression (_ &quot;Patches across chart&quot;)&#10;&#9;&#9;&#9;(if NULL == default then 1 else to_real default.pacross); &#10;&#9;matrix = measure 0 0 rotate.width rotate.height &#10;&#9;&#9;&#9;(to_real pacross) 1 rotate;&#10;}" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;straighten arrow&#10;&#9;= rotate Interpolate_bilinear angle'' arrow.image&#10;{&#10;&#9;x = arrow.width;&#10;&#9;y = arrow.height;&#10;&#10;&#9;angle = im (polar (x, y));&#10;&#9;&#9;&#10;&#9;angle'&#10;&#9;&#9;= angle - 360, angle &gt; 315&#10;&#9;&#9;= angle - 180, angle &gt; 135&#10;&#9;&#9;= angle;&#10;&#9;&#9;&#10;&#9;angle''&#10;&#9;&#9;= -angle', angle' &gt;= (-45) &amp;&amp; angle' &lt; 45&#10;&#9;&#9;= 90 - angle';&#10;}&#10;&#10;rotate_widget = Image_transform_item.Rotate_item.Fixed_item.rotate_widget;&#10;&#10;Markup_macbeth pair = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of Macbeth in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the Macbeth with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the Macbeth to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box;&#10;}&#10;&#10;Markup_reflectance default pair =&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of reflectance standard in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h, NULL == default&#10;&#9;&#9;= Arrow straighten_image default.line.left default.line.top &#10;&#9;&#9;&#9;default.line.width default.line.height&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the reflectance standard with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h, NULL == default&#10;&#9;&#9;= Region box_image default.box.left default.box.top &#10;&#9;&#9;&#9;default.box.width default.box.height &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the reflectance standard to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box, NULL == default&#10;&#9;&#9;= rotate_widget default.rotate.angle.value box;&#10;&#10;&#9;pacross = Expression (_ &quot;Patches across chart&quot;)&#10;&#9;&#9;&#9;(if NULL == default then 1 else to_real default.pacross); &#10;&#9;matrix = measure 0 0 rotate.width rotate.height &#10;&#9;&#9;&#9;(to_real pacross) 1 rotate;&#10;}" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="A" caption="mark position of Macbeth in visible-light reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A21">
@@ -509,7 +509,7 @@
               </Row>
               <Row name="straighten_prompt">
                 <Rhs vislevel="1" flags="4">
-                  <iText/>
+                  <iText formula="&quot;Put line along edge of Macbeth&quot;"/>
                 </Rhs>
               </Row>
               <Row name="straighten_image">
@@ -592,7 +592,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="555" y="0" open="true" selected="true" sform="false" next="5" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
+    <Column x="602" y="0" open="true" selected="true" sform="false" next="5" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="6">
@@ -614,7 +614,7 @@
               </Row>
               <Row name="straighten_prompt">
                 <Rhs vislevel="1" flags="4">
-                  <iText/>
+                  <iText formula="&quot;Put line along edge of reflectance targets&quot;"/>
                 </Rhs>
               </Row>
               <Row name="straighten_image">
@@ -704,7 +704,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="1109" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;apply = Tasks_capture_item.Apply_calib_item.action;&#10;&#10;export x = icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x; &#10;&#10;apply_xyz c x = colour_transform_to Image_type.XYZ (apply c x);&#10;&#10;Apply_calib c p = class &#10;&#9;Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = p.label;&#10;&#9;targets_label = p.targets_label ++ &quot;, colour-calibrated&quot;;&#10;&#9;targets = apply_xyz c p.targets;&#10;&#9;object_label = p.object_label ++ &quot;, colour-calibrated&quot;;&#10;&#9;object = apply_xyz c p.object;&#10;}&#10;&#10;&#9;" name="viscalib" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;apply = Tasks_capture_item.Apply_calib_item.action;&#10;&#10;export x = icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE x; &#10;&#10;apply_xyz c x = colour_transform_to Image_type.XYZ (apply c x);&#10;&#10;Apply_calib c p = class &#10;&#9;input.Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = p.label;&#10;&#9;targets_label = p.targets_label ++ &quot;, colour-calibrated&quot;;&#10;&#9;targets = apply_xyz c p.targets;&#10;&#9;object_label = p.object_label ++ &quot;, colour-calibrated&quot;;&#10;&#9;object = apply_xyz c p.object;&#10;}&#10;&#10;&#9;" name="viscalib" caption="generate visible-light calibration from Macbeth" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="10" name="D" caption="generate calibration matrix">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
@@ -807,7 +807,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Apply_ct ct p = class &#10;&#9;Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = p.label;&#10;&#9;targets = p.targets / ct;&#10;&#9;object = p.object / ct; &#10;&#10;}" name="uvlcalib" caption="UV-induced visible luminescence calibration" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Apply_ct ct p = class &#10;&#9;input.Pair label targets object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = p.label;&#10;&#9;targets = p.targets / ct;&#10;&#9;object = p.object / ct; &#10;}" name="uvlcalib" caption="UV-induced visible luminescence calibration" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="visible illuminant colour temperature">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
@@ -924,7 +924,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Match a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark_relative reference 0.25 0.25;&#10;&#9;ap2 = Mark_relative reference 0.75 0.75;&#10;&#9;bp1 = Mark_relative adjust 0.25 0.25;&#10;&#9;bp2 = Mark_relative adjust 0.75 0.75;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}   &#10;&#10;Match_default default a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark reference default.ap1.left default.ap1.top;&#10;&#9;ap2 = Mark reference default.ap2.left default.ap2.top;&#10;&#9;bp1 = Mark adjust default.bp1.left default.bp1.top;&#10;&#9;bp2 = Mark adjust default.bp2.left default.bp2.top;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}&#10;&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Match a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark_relative reference 0.25 0.25;&#10;&#9;ap2 = Mark_relative reference 0.75 0.75;&#10;&#9;bp1 = Mark_relative adjust 0.25 0.25;&#10;&#9;bp2 = Mark_relative adjust 0.75 0.75;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}   &#10;&#10;Match_default default a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark reference default.ap1.left default.ap1.top;&#10;&#9;ap2 = Mark reference default.ap2.left default.ap2.top;&#10;&#9;bp1 = Mark adjust default.bp1.left default.bp1.top;&#10;&#9;bp2 = Mark adjust default.bp2.left default.bp2.top;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}&#10;&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="27" name="D" caption="match IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D23">
@@ -1105,7 +1105,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="450" y="0" open="true" selected="false" sform="false" next="10" name="E" caption="match UV to vis">
+    <Column x="301" y="0" open="true" selected="false" sform="false" next="10" name="E" caption="match UV to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E7">
           <Rhs vislevel="1" flags="4">
@@ -1289,7 +1289,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="890" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="match UV-induced visible luminescence to vis">
+    <Column x="634" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="match UV-induced visible luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="1" flags="4">
@@ -1473,7 +1473,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1332" y="0" open="true" selected="true" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
+    <Column x="980" y="0" open="true" selected="true" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="1" flags="4">
@@ -1498,7 +1498,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;" name="specden" caption="spectral density" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="specden" caption="spectral density" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="777" y="0" open="true" selected="false" sform="false" next="35" name="O" caption="match brightness of IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O17">
@@ -1644,7 +1644,7 @@
         <Row popup="false" name="B14">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair_new align.D24.label align.D26 align.D1"/>
+            <iText formula="input.Pair_new align.D24.label align.D26 align.D1"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B9">
@@ -1660,7 +1660,7 @@
         <Row popup="false" name="E1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair_new align.E7.label align.E8 align.E9"/>
+            <iText formula="input.Pair_new align.E7.label align.E8 align.E9"/>
           </Rhs>
         </Row>
         <Row popup="false" name="E2">
@@ -1672,7 +1672,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="698" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair_falsecolour a b = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;to_srgb x = colour_transform_to Image_type.sRGB x;&#10;&#9;comb type a b&#10;&#9;&#9;= b?1 ++ a?0 ++ a?1, type == 0&#10;&#9;&#9;= a?1 ++ a?2 ++ b?1;&#10;&#10;&#9;label = &quot;falsecolour from &quot; ++ b.label; &#10;&#9;combine = Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0;&#10;&#9;targets = comb combine.value (to_srgb a.targets) (to_srgb b.targets);&#10;&#9;object = comb combine.value (to_srgb a.object) (to_srgb b.object);&#10;&#10;}" name="falsecolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair_falsecolour a b = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;to_srgb x = colour_transform_to Image_type.sRGB x;&#10;&#9;comb type a b&#10;&#9;&#9;= b?1 ++ a?0 ++ a?1, type == 0&#10;&#9;&#9;= a?1 ++ a?2 ++ b?1;&#10;&#10;&#9;label = &quot;falsecolour from &quot; ++ b.label; &#10;&#9;combine = Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0;&#10;&#9;targets = comb combine.value (to_srgb a.targets) (to_srgb b.targets);&#10;&#9;object = comb combine.value (to_srgb a.object) (to_srgb b.object);&#10;&#10;}" name="falsecolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="true" sform="false" next="14" name="K" caption="make false colour images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K8">
@@ -1750,7 +1750,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);" name="uvlstray" caption="remove stray light from UV-induced visible luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="uvlstray" caption="remove stray light from UV-induced visible luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="777" y="0" open="true" selected="true" sform="false" next="48" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
@@ -1828,7 +1828,7 @@
         <Row popup="false" name="Q47">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair (Q1.label ++ &quot;, stray light removed&quot;) (Q1.targets - Q3.targets) (Q1.object - Q3.object)"/>
+            <iText formula="input.Pair (Q1.label ++ &quot;, stray light removed&quot;) (Q1.targets - Q3.targets) (Q1.object - Q3.object)"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -1838,7 +1838,7 @@
         <Row popup="false" name="C32">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair_new align.A1.label align.A2 align.A3"/>
+            <iText formula="input.Pair_new align.A1.label align.A2 align.A3"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C33">
@@ -1850,7 +1850,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="734" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}" name="uvlkm" caption="Kubelka-Munk processing of UVL image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;" name="uvlkm" caption="Kubelka-Munk processing of UVL image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
@@ -1988,13 +1988,13 @@
         <Row popup="false" name="A1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair (&quot;KM of &quot; ++ J2.label) J17.targets J17.object"/>
+            <iText formula="input.Pair (&quot;KM of &quot; ++ J2.label) J17.targets J17.object"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);" name="vilstray" caption="remove stray light from vis-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="vilstray" caption="remove stray light from vis-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="777" y="0" open="true" selected="true" sform="false" next="48" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
@@ -2072,7 +2072,7 @@
         <Row popup="false" name="Q47">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair (Q1.label ++ &quot;, stray light removed&quot;) (Q1.targets - Q3.targets) (Q1.object - Q3.object)"/>
+            <iText formula="input.Pair (Q1.label ++ &quot;, stray light removed&quot;) (Q1.targets - Q3.targets) (Q1.object - Q3.object)"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -2082,7 +2082,7 @@
         <Row popup="false" name="C32">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair_new align.B1.label align.B2 align.B3"/>
+            <iText formula="input.Pair_new align.B1.label align.B2 align.B3"/>
           </Rhs>
         </Row>
         <Row popup="false" name="C33">
@@ -2094,7 +2094,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="662" lpane_open="true" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;/* Make a colour from a temperature.&#10; */     &#10;colour_from_temp T  &#10;    = error (_ &quot;T out of range&quot;), T &lt; 1667 || T &gt; 25000&#10;    = Colour &quot;Yxy&quot; [50, x, y]&#10;{       &#10;    // Kim et all approximation&#10;    // see eg. http://en.wikipedia.org/wiki/Planckian_locus#Approximation&#10;    x&#10;        = -0.2661239 * 10 ** 9 / T ** 3 - 0.2343580 * 10 ** 6 / T ** 2 +&#10;            0.8776956 * 10 ** 3 / T + 0.179910, T &lt; 4000&#10;        = -3.0258469 * 10 ** 9 / T ** 3 + 2.1070379 * 10 ** 6 / T ** 2 +&#10;            0.2226347 * 10 ** 3 / T + 0.240390;&#10; &#10;    y &#10;        = -1.1063814 * x ** 3 - 1.34811020 * x ** 2 +&#10;            2.18555832 * x - 0.20219638, T &lt; 2222&#10;        = -0.9549476 * x ** 3 - 1.37418593 * x ** 2 +&#10;            2.09137015 * x - 0.16748867, T &lt; 4000&#10;        =  3.0817580 * x ** 3 - 5.87338670 * x ** 2 +&#10;            3.75112997 * x - 0.37001483;&#10;}&#10;&#10;temp_from_colour z&#10;    = T&#10;{&#10;    c = colour_transform_to Image_type.YXY (to_colour z);&#10;    x = c.value?1;&#10;    y = c.value?2;&#10;        &#10;    // McCamy's approximation, see eg. &#10;    // http://en.wikipedia.org/wiki/Color_temperature#Approximation&#10;&#10;    xe = 0.332;&#10;    ye = 0.1858;&#10;    n = (x - xe) / (y - ye);&#10;    T = -449 * n ** 3 + 3525 * n ** 2 - 6823.3 * n + 5520.33;&#10;}   &#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}" name="vilkm" caption="Kubelka-Munk processing of visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="vilkm" caption="Kubelka-Munk processing of visible-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="J" caption="kubelka munk">
       <Subcolumn vislevel="3">
         <Row popup="false" name="J1">
@@ -2232,13 +2232,13 @@
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="Pair (&quot;KM of &quot; ++ J2.label) J17.targets J17.object"/>
+            <iText formula="input.Pair (&quot;KM of &quot; ++ J2.label) J17.targets J17.object"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1918" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;export x&#10;&#9;= oo_unary_function export_op x, is_class x&#10;&#9;= icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE (lab x), is_image x&#10;&#9;= error (_ &quot;bad arguments to &quot; ++ &quot;export&quot;)&#10;{&#10;&#9;export_op = Operator $export export Operator_type.COMPOUND false;&#10;&#10;&#9;lab x = colour_transform_to Image_type.LAB (get_image x);&#10;}&#10;&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;export x&#10;&#9;= oo_unary_function export_op x, is_class x&#10;&#9;= icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE (lab x), is_image x&#10;&#9;= error (_ &quot;bad arguments to &quot; ++ &quot;export&quot;)&#10;{&#10;&#9;export_op = Operator $export export Operator_type.COMPOUND false;&#10;&#10;&#9;lab x = colour_transform_to Image_type.LAB (get_image x);&#10;}&#10;&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="true" sform="false" next="8" name="A" caption="Macbeth image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A3">
@@ -2261,7 +2261,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="667" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
+    <Column x="533" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="6">
@@ -2294,7 +2294,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1139" y="0" open="true" selected="false" sform="false" next="12" name="C" caption="luminescence iamges">
+    <Column x="917" y="0" open="true" selected="false" sform="false" next="12" name="C" caption="luminescence iamges">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C2">
           <Rhs vislevel="2" flags="6">
