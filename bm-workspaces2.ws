@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.33.0">
-  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;&#10;Pair_flatfield _i label = class {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [] 10 10 3, NULL == _i&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 200] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="492" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;&#10;Pair_flatfield _i label = class {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [] 10 10 3, NULL == _i&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 200] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="681" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E2">
           <Rhs vislevel="2" flags="6">
@@ -98,7 +98,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="492" y="491" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
+    <Column x="681" y="587" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F2">
           <Rhs vislevel="2" flags="6">
@@ -195,7 +195,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="984" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
+    <Column x="1360" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G2">
           <Rhs vislevel="2" flags="6">
@@ -292,7 +292,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="984" y="491" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
+    <Column x="1360" y="587" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H2">
           <Rhs vislevel="2" flags="6">
@@ -399,7 +399,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="0" y="491" open="true" selected="false" sform="false" next="5" name="I" caption="save output images as 16-bits?">
+    <Column x="0" y="587" open="true" selected="false" sform="false" next="5" name="I" caption="save output images as 16-bits?">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I3">
           <Rhs vislevel="1" flags="4">
@@ -468,7 +468,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="583" y="0" open="true" selected="true" sform="false" next="10" name="K" caption="mono-ize IR and UV images">
+    <Column x="228" y="0" open="true" selected="true" sform="false" next="10" name="K" caption="mono-ize IR and UV images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K8">
           <Rhs vislevel="2" flags="6">
@@ -491,7 +491,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;straighten arrow&#10;&#9;= rotate Interpolate_bilinear angle'' arrow.image&#10;{&#10;&#9;x = arrow.width;&#10;&#9;y = arrow.height;&#10;&#10;&#9;angle = im (polar (x, y));&#10;&#9;&#9;&#10;&#9;angle'&#10;&#9;&#9;= angle - 360, angle &gt; 315&#10;&#9;&#9;= angle - 180, angle &gt; 135&#10;&#9;&#9;= angle;&#10;&#9;&#9;&#10;&#9;angle''&#10;&#9;&#9;= -angle', angle' &gt;= (-45) &amp;&amp; angle' &lt; 45&#10;&#9;&#9;= 90 - angle';&#10;}&#10;&#10;rotate_widget = Image_transform_item.Rotate_item.Fixed_item.rotate_widget;&#10;&#10;Markup_macbeth pair = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of Macbeth in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the Macbeth with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the Macbeth to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box;&#10;}&#10;&#10;Markup_reflectance default pair =&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of reflectance standard in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h, NULL == default&#10;&#9;&#9;= Arrow straighten_image default.line.left default.line.top &#10;&#9;&#9;&#9;default.line.width default.line.height&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the reflectance standard with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h, NULL == default&#10;&#9;&#9;= Region box_image default.box.left default.box.top &#10;&#9;&#9;&#9;default.box.width default.box.height &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the reflectance standard to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box, NULL == default&#10;&#9;&#9;= rotate_widget default.rotate.angle.value box;&#10;&#10;&#9;pacross = Expression (_ &quot;Patches across chart&quot;)&#10;&#9;&#9;&#9;(if NULL == default then 1 else to_real default.pacross); &#10;&#9;matrix = measure 0 0 rotate.width rotate.height &#10;&#9;&#9;&#9;(to_real pacross) 1 rotate;&#10;}" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;straighten arrow&#10;&#9;= rotate Interpolate_bilinear angle'' arrow.image&#10;{&#10;&#9;x = arrow.width;&#10;&#9;y = arrow.height;&#10;&#10;&#9;angle = im (polar (x, y));&#10;&#9;&#9;&#10;&#9;angle'&#10;&#9;&#9;= angle - 360, angle &gt; 315&#10;&#9;&#9;= angle - 180, angle &gt; 135&#10;&#9;&#9;= angle;&#10;&#9;&#9;&#10;&#9;angle''&#10;&#9;&#9;= -angle', angle' &gt;= (-45) &amp;&amp; angle' &lt; 45&#10;&#9;&#9;= 90 - angle';&#10;}&#10;&#10;rotate_widget = Image_transform_item.Rotate_item.Fixed_item.rotate_widget;&#10;&#10;Markup_macbeth pair = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of Macbeth in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the Macbeth with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the Macbeth to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box;&#10;}&#10;&#10;Markup_reflectance default pair =&#9;class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;straighten_prompt = &quot;Position line along edge of reflectance standard in &quot; ++ pair.label;&#10;&#9;straighten_image = copy pair.targets;&#10;&#9;line &#10;&#9;&#9;= Arrow straighten_image x y w h, NULL == default&#10;&#9;&#9;= Arrow straighten_image default.line.left default.line.top &#10;&#9;&#9;&#9;default.line.width default.line.height&#10;&#9;{&#10;&#9;&#9;x = pair.targets.width / 4;&#10;&#9;&#9;y = pair.targets.height / 2;&#10;&#9;&#9;w = pair.targets.width / 2;&#10;&#9;&#9;h = 0;&#10;&#9;}&#10;&#10;&#9;enclose_prompt = &quot;Enclose the reflectance standard with box&quot;;&#10;&#9;box_image = straighten line;&#10;&#9;box &#10;&#9;&#9;= Region box_image x y w h, NULL == default&#10;&#9;&#9;= Region box_image default.box.left default.box.top &#10;&#9;&#9;&#9;default.box.width default.box.height &#10;&#9;{&#10;&#9;&#9;x = box_image.width / 4;&#10;&#9;&#9;y = box_image.height / 4;&#10;&#9;&#9;w = box_image.width / 2;&#10;&#9;&#9;h = box_image.height / 2;&#10;&#9;}&#10;&#10;&#9;rotate_prompt = &quot;Rotate the reflectance standard to get white at the bottom-left&quot;;&#10;&#9;rotate &#10;&#9;&#9;= rotate_widget 0 box, NULL == default&#10;&#9;&#9;= rotate_widget default.rotate.angle.value box;&#10;&#10;&#9;pacross = Expression (_ &quot;Patches across chart&quot;)&#10;&#9;&#9;&#9;(if NULL == default then 1 else to_real default.pacross); &#10;&#9;matrix = measure 0 0 rotate.width rotate.height &#10;&#9;&#9;&#9;(to_real pacross) 1 rotate;&#10;}" name="markup" caption="mark features on images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="22" name="A" caption="mark position of Macbeth in visible-light reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A21">
@@ -514,14 +514,14 @@
               </Row>
               <Row name="straighten_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="525" image_top="623" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="831" window_y="93" window_width="752" window_height="749" image_left="3075" image_top="766" image_mag="2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="line">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="449" top="570" width="251" height="11">
+                  <iArrow left="2337" top="748" width="708" height="35">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -535,14 +535,119 @@
               </Row>
               <Row name="box_image">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="744" image_top="659" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="2720" image_top="1110" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="box">
                 <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="479" top="621" width="243" height="167">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="2384" top="863" width="680" height="453">
+                    <iRegiongroup/>
+                  </iRegion>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="rotate_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="rotate">
+                <Rhs vislevel="3" flags="7">
+                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="1">
+                    <Row name="default">
+                      <Rhs vislevel="0" flags="4">
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                    <Row name="x">
+                      <Rhs vislevel="0" flags="4">
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                    <Row name="super">
+                      <Rhs vislevel="0" flags="4">
+                        <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                        <Subcolumn vislevel="0"/>
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                    <Row name="angle">
+                      <Rhs vislevel="1" flags="1">
+                        <Option caption="Rotate by" labelsn="4" labels0="Don't rotate" labels1="90 degrees clockwise" labels2="180 degrees" labels3="90 degrees anticlockwise" value="0"/>
+                        <Subcolumn vislevel="0"/>
+                        <iText/>
+                      </Rhs>
+                    </Row>
+                  </Subcolumn>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Markup_macbeth linear.J13"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="778" y="0" open="true" selected="true" sform="false" next="5" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="B1">
+          <Rhs vislevel="2" flags="6">
+            <Subcolumn vislevel="1">
+              <Row name="default">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="pair">
+                <Rhs vislevel="2" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="straighten_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText formula="&quot;Put line along edge of reflectance targets&quot;"/>
+                </Rhs>
+              </Row>
+              <Row name="straighten_image">
+                <Rhs vislevel="1" flags="1">
+                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="1180" image_top="842" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="5.7186359726192189" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="line">
+                <Rhs vislevel="1" flags="1">
+                  <iArrow left="606" top="764" width="1132" height="56">
+                    <iRegiongroup/>
+                  </iArrow>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="enclose_prompt">
+                <Rhs vislevel="1" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="box_image">
+                <Rhs vislevel="1" flags="1">
+                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="1272" image_top="1204" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="box">
+                <Rhs vislevel="1" flags="1">
+                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="606" top="950" width="1230" height="304">
                     <iRegiongroup/>
                   </iRegion>
                   <Subcolumn vislevel="0"/>
@@ -583,86 +688,6 @@
                       </Rhs>
                     </Row>
                   </Subcolumn>
-                  <iText/>
-                </Rhs>
-              </Row>
-            </Subcolumn>
-            <iText formula="Markup_macbeth linear.J13"/>
-          </Rhs>
-        </Row>
-      </Subcolumn>
-    </Column>
-    <Column x="602" y="0" open="true" selected="true" sform="false" next="5" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
-      <Subcolumn vislevel="3">
-        <Row popup="false" name="B1">
-          <Rhs vislevel="2" flags="6">
-            <Subcolumn vislevel="1">
-              <Row name="default">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="pair">
-                <Rhs vislevel="2" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="super">
-                <Rhs vislevel="0" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="straighten_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText formula="&quot;Put line along edge of reflectance targets&quot;"/>
-                </Rhs>
-              </Row>
-              <Row name="straighten_image">
-                <Rhs vislevel="1" flags="1">
-                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="1081" image_top="552" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="line">
-                <Rhs vislevel="1" flags="1">
-                  <iArrow left="889" top="624" width="442" height="24">
-                    <iRegiongroup/>
-                  </iArrow>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="enclose_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="box_image">
-                <Rhs vislevel="1" flags="1">
-                  <iImage window_x="833" window_y="92" window_width="750" window_height="750" image_left="1054" image_top="603" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="box">
-                <Rhs vislevel="1" flags="1">
-                  <iRegion image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true" left="926" top="656" width="438" height="105">
-                    <iRegiongroup/>
-                  </iRegion>
-                  <Subcolumn vislevel="0"/>
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="rotate_prompt">
-                <Rhs vislevel="1" flags="4">
-                  <iText/>
-                </Rhs>
-              </Row>
-              <Row name="rotate">
-                <Rhs vislevel="3" flags="7">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
-                  <Subcolumn vislevel="1"/>
                   <iText/>
                 </Rhs>
               </Row>
@@ -775,13 +800,6 @@
               </Row>
             </Subcolumn>
             <iText formula="Tasks_capture_item.Find_calib_item.action D1"/>
-          </Rhs>
-        </Row>
-        <Row popup="false" name="D3">
-          <Rhs vislevel="3" flags="7">
-            <iImage window_x="666" window_y="68" window_width="750" window_height="693" image_left="357" image_top="285" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
-            <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.XYZ_item.action D8"/>
           </Rhs>
         </Row>
       </Subcolumn>
@@ -924,7 +942,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Match a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark_relative reference 0.25 0.25;&#10;&#9;ap2 = Mark_relative reference 0.75 0.75;&#10;&#9;bp1 = Mark_relative adjust 0.25 0.25;&#10;&#9;bp2 = Mark_relative adjust 0.75 0.75;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}   &#10;&#10;Match_default default a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark reference default.ap1.left default.ap1.top;&#10;&#9;ap2 = Mark reference default.ap2.left default.ap2.top;&#10;&#9;bp1 = Mark adjust default.bp1.left default.bp1.top;&#10;&#9;bp2 = Mark adjust default.bp2.left default.bp2.top;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}&#10;&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Match a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark_relative reference 0.25 0.25;&#10;&#9;ap2 = Mark_relative reference 0.75 0.75;&#10;&#9;bp1 = Mark_relative adjust 0.25 0.25;&#10;&#9;bp2 = Mark_relative adjust 0.75 0.75;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}   &#10;&#10;Match_default default a b = class &#10;&#9;_result {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;reference = copy a;&#10;&#9;adjust = copy b;&#10;&#10;&#9;ap1 = Mark reference default.ap1.left default.ap1.top;&#10;&#9;ap2 = Mark reference default.ap2.left default.ap2.top;&#10;&#9;bp1 = Mark adjust default.bp1.left default.bp1.top;&#10;&#9;bp2 = Mark adjust default.bp2.left default.bp2.top;&#10;&#10;&#9;test_alignment = _result?1 ++ reference?1 ++ 0;&#10;&#10;&#9;_result&#10;&#9;&#9;= Image (im_match_linear reference.value adjust.value&#10;&#9;&#9;&#9;ap1.left ap1.top bp1.left bp1.top&#10;&#9;&#9;&#9;ap2.left ap2.top bp2.left bp2.top);&#10;}&#10;&#10;" name="align" caption="align all images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="false" sform="false" next="27" name="D" caption="match IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D23">
@@ -962,21 +980,21 @@
               </Row>
               <Row name="reference">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="2" window_y="57" window_width="750" window_height="750" image_left="880" image_top="737" image_mag="8" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="2" window_y="57" window_width="750" window_height="750" image_left="1845" image_top="736" image_mag="8" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="adjust">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="2" window_y="57" window_width="750" window_height="750" image_left="1030" image_top="686" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1054" window_y="127" window_width="750" window_height="750" image_left="2312" image_top="1024" image_mag="-2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="ap1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="462" top="583" width="0" height="0">
+                  <iArrow left="1847" top="732" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -985,7 +1003,7 @@
               </Row>
               <Row name="ap2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="870" top="764" width="0" height="0">
+                  <iArrow left="2981" top="1236" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -994,7 +1012,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="475" top="574" width="0" height="0">
+                  <iArrow left="1828" top="768" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1003,7 +1021,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="877" top="756" width="0" height="0">
+                  <iArrow left="2951" top="1268" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1012,7 +1030,7 @@
               </Row>
               <Row name="test_alignment">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="1060" image_top="550" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="1351" image_top="842" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1044,21 +1062,21 @@
               </Row>
               <Row name="reference">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="878" window_y="89" window_width="750" window_height="750" image_left="211" image_top="200" image_mag="8" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1101" window_y="360" window_width="750" window_height="750" image_left="180" image_top="926" image_mag="8" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="adjust">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="2" window_y="57" window_width="750" window_height="750" image_left="217" image_top="206" image_mag="16" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="3" window_y="85" window_width="750" window_height="750" image_left="191" image_top="930" image_mag="8" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="3.5826800357899482" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="ap1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="211" top="200" width="0" height="0">
+                  <iArrow left="177" top="923" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1067,7 +1085,7 @@
               </Row>
               <Row name="ap2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="1470" top="696" width="0" height="0">
+                  <iArrow left="3367" top="2720" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1076,7 +1094,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="217" top="204" width="0" height="0">
+                  <iArrow left="196" top="928" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1085,7 +1103,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="1463" top="695" width="0" height="0">
+                  <iArrow left="3351" top="2705" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1094,7 +1112,7 @@
               </Row>
               <Row name="test_alignment">
                 <Rhs vislevel="1" flags="1">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1" window_y="52" window_width="750" window_height="750" image_left="736" image_top="638" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1105,7 +1123,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="301" y="0" open="true" selected="false" sform="false" next="10" name="E" caption="match UV to vis">
+    <Column x="450" y="0" open="true" selected="false" sform="false" next="10" name="E" caption="match UV to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E7">
           <Rhs vislevel="1" flags="4">
@@ -1142,14 +1160,14 @@
               </Row>
               <Row name="reference">
                 <Rhs vislevel="1" flags="1">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="28" window_y="389" window_width="750" window_height="750" image_left="2484" image_top="1572" image_mag="-4" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="adjust">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="784" image_top="726" image_mag="4" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="802" window_y="397" window_width="750" window_height="750" image_left="2296" image_top="1078" image_mag="-2" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="35.30607867027215" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1174,7 +1192,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="448" top="571" width="0" height="0">
+                  <iArrow left="1904" top="756" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1183,7 +1201,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="848" top="755" width="0" height="0">
+                  <iArrow left="3024" top="1266" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1228,14 +1246,14 @@
               </Row>
               <Row name="reference">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="1024" window_y="128" window_width="750" window_height="750" image_left="1438" image_top="691" image_mag="4" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1079" window_y="375" window_width="750" window_height="750" image_left="3391" image_top="2702" image_mag="2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="adjust">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="1438" image_top="697" image_mag="4" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="3392" image_top="2551" image_mag="1" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="18.617011578086434" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1260,7 +1278,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="220" top="205" width="0" height="0">
+                  <iArrow left="196" top="930" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1269,7 +1287,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="1464" top="694" width="0" height="0">
+                  <iArrow left="3357" top="2713" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1289,7 +1307,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="634" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="match UV-induced visible luminescence to vis">
+    <Column x="890" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="match UV-induced visible luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="1" flags="4">
@@ -1326,7 +1344,7 @@
               </Row>
               <Row name="reference">
                 <Rhs vislevel="1" flags="1">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1021" window_y="397" window_width="750" window_height="750" image_left="2944" image_top="2552" image_mag="-8" show_status="true" show_paintbox="false" show_convert="true" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1358,7 +1376,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="403" top="490" width="0" height="0">
+                  <iArrow left="2064" top="893" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1367,7 +1385,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="793" top="708" width="0" height="0">
+                  <iArrow left="3180" top="1490" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1376,7 +1394,7 @@
               </Row>
               <Row name="test_alignment">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="3" window_y="108" window_width="750" window_height="750" image_left="1034" image_top="673" image_mag="1" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="162" window_y="364" window_width="750" window_height="750" image_left="1679" image_top="973" image_mag="2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1412,14 +1430,14 @@
               </Row>
               <Row name="reference">
                 <Rhs vislevel="1" flags="1">
-                  <iImage image_left="0" image_top="0" image_mag="0" show_status="false" show_paintbox="false" show_convert="false" show_rulers="false" scale="0" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="1160" window_y="397" window_width="750" window_height="750" image_left="3413" image_top="2702" image_mag="2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
               </Row>
               <Row name="adjust">
                 <Rhs vislevel="1" flags="1">
-                  <iImage window_x="1" window_y="29" window_width="750" window_height="750" image_left="1438" image_top="697" image_mag="4" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
+                  <iImage window_x="126" window_y="397" window_width="750" window_height="750" image_left="3322" image_top="2702" image_mag="2" show_status="true" show_paintbox="false" show_convert="false" show_rulers="false" scale="1" offset="0" falsecolour="false" type="true"/>
                   <Subcolumn vislevel="0"/>
                   <iText/>
                 </Rhs>
@@ -1444,7 +1462,7 @@
               </Row>
               <Row name="bp1">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="210" top="203" width="0" height="0">
+                  <iArrow left="178" top="924" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1453,7 +1471,7 @@
               </Row>
               <Row name="bp2">
                 <Rhs vislevel="1" flags="1">
-                  <iArrow left="1470" top="696" width="0" height="0">
+                  <iArrow left="3366" top="2711" width="0" height="0">
                     <iRegiongroup/>
                   </iArrow>
                   <Subcolumn vislevel="0"/>
@@ -1473,7 +1491,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="980" y="0" open="true" selected="true" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
+    <Column x="1332" y="0" open="true" selected="true" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="1" flags="4">
@@ -1499,7 +1517,7 @@
     </Column>
   </Workspace>
   <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="specden" caption="spectral density" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="777" y="0" open="true" selected="false" sform="false" next="35" name="O" caption="match brightness of IR to vis">
+    <Column x="784" y="0" open="true" selected="false" sform="false" next="35" name="O" caption="match brightness of IR to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="O17">
           <Rhs vislevel="3" flags="7">
@@ -1569,7 +1587,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1981" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="match brightness of UV to vis">
+    <Column x="1995" y="0" open="true" selected="false" sform="false" next="1" name="A" caption="match brightness of UV to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A7">
           <Rhs vislevel="3" flags="7">
@@ -1655,7 +1673,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1213" y="0" open="true" selected="true" sform="false" next="1" name="E" caption="get the spectralon from the UV reflectance image">
+    <Column x="1220" y="0" open="true" selected="true" sform="false" next="1" name="E" caption="get the spectralon from the UV reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E1">
           <Rhs vislevel="2" flags="6">
@@ -1751,7 +1769,7 @@
     </Column>
   </Workspace>
   <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="uvlstray" caption="remove stray light from UV-induced visible luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="777" y="0" open="true" selected="true" sform="false" next="48" name="Q" caption="remove residual visible light">
+    <Column x="784" y="0" open="true" selected="true" sform="false" next="48" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
           <Rhs vislevel="2" flags="6">
@@ -1995,7 +2013,7 @@
     </Column>
   </Workspace>
   <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;" name="vilstray" caption="remove stray light from vis-induced IR luminescence image" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="777" y="0" open="true" selected="true" sform="false" next="48" name="Q" caption="remove residual visible light">
+    <Column x="386" y="0" open="true" selected="true" sform="false" next="48" name="Q" caption="remove residual visible light">
       <Subcolumn vislevel="3">
         <Row popup="false" name="Q1">
           <Rhs vislevel="2" flags="6">
@@ -2227,7 +2245,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="606" y="0" open="true" selected="true" sform="false" next="6" name="I" caption="result">
+    <Column x="385" y="0" open="true" selected="true" sform="false" next="6" name="I" caption="result">
       <Subcolumn vislevel="3">
         <Row popup="false" name="I1">
           <Rhs vislevel="2" flags="6">
@@ -2238,8 +2256,8 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;export x&#10;&#9;= oo_unary_function export_op x, is_class x&#10;&#9;= icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE (lab x), is_image x&#10;&#9;= error (_ &quot;bad arguments to &quot; ++ &quot;export&quot;)&#10;{&#10;&#9;export_op = Operator $export export Operator_type.COMPOUND false;&#10;&#10;&#9;lab x = colour_transform_to Image_type.LAB (get_image x);&#10;}&#10;&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="0" y="0" open="true" selected="true" sform="false" next="8" name="A" caption="Macbeth image">
+  <Workspace window_x="1" window_y="52" window_width="1916" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;export x&#10;&#9;= oo_unary_function export_op x, is_class x&#10;&#9;= icc_export input.depth &quot;$VIPSHOME/share/$PACKAGE/data/sRGB.icm&quot; Render_intent.RELATIVE (lab x), is_image x&#10;&#9;= error (_ &quot;bad arguments to &quot; ++ &quot;export&quot;)&#10;{&#10;&#9;export_op = Operator $export export Operator_type.COMPOUND false;&#10;&#10;&#9;lab x = colour_transform_to Image_type.LAB (get_image x);&#10;}&#10;&#10;" name="results" caption="all the finished images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="0" y="0" open="true" selected="false" sform="false" next="8" name="A" caption="Macbeth image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A3">
           <Rhs vislevel="2" flags="6">
@@ -2261,7 +2279,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="533" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
+    <Column x="667" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="6">
@@ -2294,7 +2312,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="917" y="0" open="true" selected="false" sform="false" next="12" name="C" caption="luminescence iamges">
+    <Column x="1139" y="0" open="true" selected="false" sform="false" next="12" name="C" caption="luminescence iamges">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C2">
           <Rhs vislevel="2" flags="6">
