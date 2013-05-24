@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root xmlns="http://www.vips.ecs.soton.ac.uk/nip/7.33.0">
-  <Workspace window_x="0" window_y="29" window_width="1920" window_height="1051" view="WORKSPACE_MODE_NOEDIT" scale="1" offset="0" lpane_position="0" lpane_open="false" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;&#10;Pair_flatfield _i label = class {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [] 10 10 3, NULL == _i&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 200] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
-    <Column x="492" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
+  <Workspace window_x="0" window_y="29" window_width="1920" window_height="1051" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" lpane_position="645" lpane_open="true" rpane_position="100" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;get_option options defaults f&#10;    = error (_ &quot;unknown parameter &quot; ++ f), hits == []&#10;    = hits?0&#10;{&#10;    hits = [v :: [n, v] &lt;- options ++ defaults; n == f];&#10;}&#10;&#10;mkim options x y b&#10;    = Image (image_new x y b&#10;        (opt $format) (opt $coding) (opt $type)&#10;        (opt $pixel)&#10;        (opt $xoffset) (opt $yoffset))&#10;{&#10;    opt = get_option options [&#10;        $format =&gt; Image_format.UCHAR,&#10;        $coding =&gt; Image_coding.NOCODING,&#10;        $type =&gt; Image_type.sRGB,&#10;        $pixel =&gt; 0,&#10;        $xoffset =&gt; 0,&#10;        $yoffset =&gt; 0&#10;    ];&#10;}&#10;&#10;is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;    _Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;    oo_binary_table op x = [&#10;        [this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;            is_Pair x],&#10;        [this.Pair label (op.fn a x) (op.fn b x),&#10;            true]&#10;    ];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;&#10;Pair_flatfield _i label = class {&#10;    _vislevel = 3;&#10;&#10;    image &#10;&#9;&#9;= mkim [$pixel =&gt; 100] 100 100 3, NULL == _i&#10;&#9;&#9;= _i;&#10;    use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;    flatfield = mkim [$pixel =&gt; 100] image.width image.height 3;&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" caption="all the source images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+    <Column x="681" y="0" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E2">
           <Rhs vislevel="4" flags="6">
@@ -11,7 +11,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="492" y="524" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
+    <Column x="681" y="620" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F2">
           <Rhs vislevel="4" flags="6">
@@ -21,7 +21,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="961" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
+    <Column x="1337" y="0" open="true" selected="false" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G2">
           <Rhs vislevel="4" flags="6">
@@ -31,7 +31,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="961" y="524" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
+    <Column x="1337" y="620" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H2">
           <Rhs vislevel="2" flags="6">
@@ -153,7 +153,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="588" y="0" open="true" selected="true" sform="false" next="5" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
+    <Column x="445" y="0" open="true" selected="true" sform="false" next="5" name="B" caption="mark position of reflectance standards in visible-light reflectance image">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="2" flags="6">
@@ -887,7 +887,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="325" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
+    <Column x="241" y="0" open="true" selected="false" sform="false" next="9" name="B" caption="False colour UV and IR images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="6">
@@ -920,7 +920,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="565" y="0" open="true" selected="false" sform="false" next="12" name="C" caption="luminescence iamges">
+    <Column x="478" y="0" open="true" selected="false" sform="false" next="12" name="C" caption="luminescence iamges">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C2">
           <Rhs vislevel="2" flags="6">
