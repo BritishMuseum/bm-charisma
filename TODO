@@ -1,0 +1,35 @@
+- something to do a scatter-plot of patches in a colour chart for Joanne
+
+    useful for assessing accuracy and comparability of images taken
+    with various UVL setups
+
+- centre 50% of patch is too much in some cases
+
+    add a control to let users pick the size of the patch that gets
+    measured, plus a simple visualisation to show where the
+    patches are falling
+
+	DONE for markup tab, use elsewhere too
+
+- in "align" tab, A2 does not update correctly
+
+    investigate
+
+    	Need to do a "reset" on almost everything in the "align" tab when we
+	clean it out
+
+- try to stop tab double-click creating a new tab
+
+- add UVL before stray-light removal to "results" tab
+
+	DONE
+
+- fix typo in "results" tab, column C
+
+	DONE
+
+- need a control for UVL exposure compensation
+
+    eg. set white brightness from UV innovations white
+
+
