@@ -9,7 +9,7 @@
     measured, plus a simple visualisation to show where the
     patches are falling
 
-	DONE for markup tab, use elsewhere too
+	Done 
 
 - in "align" tab, A2 does not update correctly
 
@@ -22,14 +22,14 @@
 
 - add UVL before stray-light removal to "results" tab
 
-	DONE
+	Done
 
 - fix typo in "results" tab, column C
 
-	DONE
+	Done
 
 - need a control for UVL exposure compensation
 
     eg. set white brightness from UV innovations white
 
-
+	Added "exposure compensation" column to the end of uvlstray
