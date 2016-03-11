@@ -1,7 +1,7 @@
 # bm-workspaces: a set of nip2 workspaces for technical imaging
 
-This set of workspaces are for working with technical images of museum
-objects. They are useful for colour calibration, preparation of false-colour
+This nip2 workspace is for working with technical images of museum
+objects. It is useful for colour calibration, preparation of false-colour
 images, and calibration of fluorescence images. 
 
 ### Acknowledgements
@@ -12,8 +12,8 @@ and John Cupitt.
 
 ### Import
 
-For these workspace to work well, you need to take care importing images from 
-your camera. The workspaces assume that the ICC profile attached to the image
+For this workspace to work well, you need to take care importing images from 
+your camera. The workspace assumes that the ICC profile attached to the image
 will not apply a tone curve.
 
 In PhotoShop, turn off everything you can, and select no tone curve. 
@@ -22,7 +22,7 @@ You can import with rawtherapee like this:
 
 	$ rawtherapee -p rawtherapee-import-params.pp3 -t -c *.CR2
 
-where rawtherapee-import-params.pp3 is in this directory. 
+where `rawtherapee-import-params.pp3` is in this directory. 
 
 ### Installing nip2
 
@@ -31,30 +31,26 @@ program](http://www.vips.ecs.soton.ac.uk/supported/current) from the vips
 website.
 
 There are versions for Windows and OS X. On Linux, start your package manager
-and search for "nip2".
+and search for `nip2`.
 
-# Colour calibration with viscalib.ws
+### Loading the workspace
 
-Use workspace viscalib.ws to perform visible-light colour calibration of one
-image or a set of images.
+Start nip2 and drag `bm-workspaces.ws` into the main window, or alternatively
+select File / Open. The workspace needs nip2 8.2 or later. 
 
-# False-colour images with false-colour.
+There is a manual on how to use the workspace on the British Museum page for
+this project:
 
-Use workspace false-colour.ws to prepare UV or IR false-colour images.
+	http://www.britishmuseum.org/research/research_projects/all_current_projects/charisma/technical_imaging.aspx
 
-It can also prepare calibrated UV and IR reflectance images.
+# Also here
 
-# UV-fluorescence images with uvlcalib.ws
+`charisma-bm-workspace.ws` is an earlier version of the workspace which will
+work with older versions of nip2.
 
-Use this workspace to calibrate UV-induced fluorescence images. The workspace
-can use the Kubelka-Munk colour-mixing equations to generate fluorescence-only
-images. 
+`bm-workspaces-perugino.ws` is exactly `bm-workspaces.ws`, but set up to
+process a sample set of images of a drawing by Perugino.
 
-# IR-fluorescence images with uvlcalib.ws
+`CHANGELOG` lists the changes made to the workspace over the years. 
 
-Use this workspace to calibrate visible-induced IR-fluorescence images. The 
-workspace can use the Kubelka-Munk colour-mixing equations to generate 
-fluorescence-only images. 
-
-
-
+`TODO` lists a few ideas and issues. 
