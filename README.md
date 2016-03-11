@@ -43,7 +43,7 @@ this project:
 
 	http://www.britishmuseum.org/research/research_projects/all_current_projects/charisma/technical_imaging.aspx
 
-# Also here
+### Also here
 
 `charisma-bm-workspace.ws` is an earlier version of the workspace which will
 work with older versions of nip2.
