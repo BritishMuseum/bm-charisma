@@ -1025,7 +1025,7 @@
       </Subcolumn>
     </Column>
   </Workspace>
-  <Workspace window_x="0" window_y="28" window_width="1920" window_height="1172" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" locked="true" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair_falsecolour a b = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;to_srgb x = colour_transform_to Image_type.sRGB x;&#10;&#9;comb type a b&#10;&#9;&#9;= b?1 ++ a?0 ++ a?1, type == 0&#10;&#9;&#9;= a?1 ++ a?2 ++ b?1;&#10;&#10;&#9;label = &quot;falsecolour from &quot; ++ b.label; &#10;&#9;combine = Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0;&#10;&#9;targets = comb combine.value (to_srgb a.targets) (to_srgb b.targets);&#10;&#9;object = comb combine.value (to_srgb a.object) (to_srgb b.object);&#10;&#10;}" name="falsecolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
+  <Workspace window_x="0" window_y="28" window_width="1920" window_height="1172" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" locked="true" lpane_position="0" lpane_open="false" rpane_position="400" rpane_open="false" local_defs="// private definitions for this workspace&#10;&#10;Pair_falsecolour a b = class {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;to_srgb x = colour_transform_to Image_type.sRGB x;&#10;&#9;comb type a b&#10;&#9;&#9;= b?1 ++ a?0 ++ a?1, type == 0&#10;&#9;&#9;= a?1 ++ a?2 ++ b?1;&#10;&#10;&#9;label = &quot;falsecolour from &quot; ++ b.label; &#10;&#9;combine = Option &quot;Combine bands as&quot; [&quot;X - RG&quot;, &quot;GB - X&quot;] 0;&#10;&#9;targets = comb combine.value (to_srgb a.targets) (to_srgb b.targets);&#10;&#9;object = comb combine.value (to_srgb a.object) (to_srgb b.object);&#10;&#10;}" name="fcolour" caption="UV and IR falsecolour images" filename="$HOME/GIT/bm-workspaces/bm-workspaces2.ws">
     <Column x="0" y="0" open="true" selected="true" sform="false" next="14" name="K" caption="make false colour images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="K8">
@@ -1642,13 +1642,13 @@
         <Row popup="false" name="B2">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="falsecolour.K9"/>
+            <iText formula="fcolour.K9"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B4">
           <Rhs vislevel="2" flags="6">
             <Subcolumn vislevel="1"/>
-            <iText formula="falsecolour.K2"/>
+            <iText formula="fcolour.K2"/>
           </Rhs>
         </Row>
         <Row popup="false" name="B5">
