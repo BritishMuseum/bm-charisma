@@ -26,12 +26,14 @@ where `rawtherapee-import-params.pp3` is in this directory.
 
 ### Installing nip2
 
-nip2 is the GUI of the vips image processing system. You can [download the
-program](http://www.vips.ecs.soton.ac.uk/supported/current) from the vips
-website.
+nip2 is the GUI of the vips image processing
+system. In April 2020, the current [windows
+version](https://github.com/libvips/nip2/releases/download/v8.7.0/nip2-8.7.0-setup.zip)
+is 8.7.0 and the current [macos
+version](https://github.com/libvips/nip2/releases/download/v8.6.0-beta2/nip2-8.6.0-beta2.app.dmg)
+is 8.6.0.
 
-There are versions for Windows and OS X. On Linux, start your package manager
-and search for `nip2`.
+On Linux, start your package manager and search for `nip2`.
 
 ### Loading the workspace
 
