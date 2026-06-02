@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<root xmlns="http://www.vips.ecs.soton.ac.uk/nip/9.1.4">
+<root xmlns="http://www.vips.ecs.soton.ac.uk/nip/9.1.3">
   <Workspace window_x="4" window_y="23" window_width="1156" window_height="849" view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" locked="false" local_defs="is_Pair = is_instanceof &quot;Pair&quot;;&#10;&#10;Pair l a b = class&#10;&#9;_Object {&#10;&#9;_vislevel = 2;&#10;&#10;&#9;label = l;&#10;&#9;targets = a;&#10;&#9;object = b;&#10;&#9;&#10;&#9;oo_binary_table op x = [&#10;&#9;&#9;[this.Pair label (op.fn targets x.targets) (op.fn object x.object),&#10;&#9;&#9;&#9;is_Pair x],&#10;&#9;&#9;[this.Pair label (op.fn a x) (op.fn b x),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;&#9;oo_unary_table op = [&#10;&#9;&#9;[this.Pair label (op.fn a) (op.fn b),&#10;&#9;&#9;&#9;true]&#10;&#9;];&#10;}&#10;&#10;Pair_new l x y = Pair l (to_image x.value) (to_image y.value);&#10;&#10;Pair_flatfield _i label = class {&#10;&#9;_vislevel = 3;&#10;&#10;&#9;image &#10;&#9;&#9;= Image (image_new [$bands =&gt; 3, $interpretation =&gt; &quot;sRGB&quot;] 100 100), NULL == _i&#10;&#9;&#9;= _i;&#10;&#10;&#9;use_flatfield = Toggle (&quot;Flatfield &quot; ++ label ++ &quot; image&quot;) false;&#10;&#9;flatfield = Image (image_new [$bands =&gt; 3, $interpretation =&gt; &quot;sRGB&quot;, $pixel =&gt; 200] image.width image.height);&#10;}&#10;&#10;Pair_load label = class {&#10;&#9;_vislevel = 2;&#10;&#9;targets = Pair_flatfield NULL (label ++ &quot; with calibration targets&quot;);&#10;&#9;object = Pair_flatfield (targets.image) (label ++ &quot; of object&quot;);&#10;}&#10;" name="input" filename="$HOME/GIT/bm-workspaces/examples/dha41/dha41-charisma-1-june-26.ws" major="9" minor="1">
     <Column x="738" y="5" open="true" selected="false" sform="false" next="3" name="E" caption="IR reflectance">
       <Subcolumn vislevel="3">
@@ -66,7 +66,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="738" y="699" open="false" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
+    <Column x="738" y="699" open="true" selected="false" sform="false" next="1" name="F" caption="UV reflectance">
       <Subcolumn vislevel="3">
         <Row popup="false" name="F2">
           <Rhs vislevel="4" flags="6">
@@ -76,7 +76,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1445" y="5" open="false" selected="true" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
+    <Column x="1445" y="5" open="true" selected="true" sform="false" next="3" name="G" caption="UV-induced visible luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="G2">
           <Rhs vislevel="4" flags="6">
@@ -86,7 +86,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1445" y="52" open="false" selected="false" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
+    <Column x="1445" y="52" open="true" selected="false" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H2">
           <Rhs vislevel="2" flags="6">
@@ -945,7 +945,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="453" y="5" open="false" selected="true" sform="false" next="10" name="E" caption="match UV to vis">
+    <Column x="453" y="5" open="true" selected="true" sform="false" next="10" name="E" caption="match UV to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E7">
           <Rhs vislevel="1" flags="4">
@@ -969,7 +969,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="888" y="5" open="false" selected="false" sform="false" next="1" name="A" caption="match UV-induced visible luminescence to vis">
+    <Column x="888" y="5" open="true" selected="false" sform="false" next="1" name="A" caption="match UV-induced visible luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="1" flags="4">
@@ -993,7 +993,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1324" y="5" open="false" selected="false" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
+    <Column x="1324" y="5" open="true" selected="false" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="1" flags="4">
@@ -2033,7 +2033,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1147" y="5" open="false" selected="true" sform="false" next="13" name="C" caption="luminescence images">
+    <Column x="1147" y="5" open="true" selected="true" sform="false" next="13" name="C" caption="luminescence images">
       <Subcolumn vislevel="3">
         <Row popup="false" name="C12">
           <Rhs vislevel="2" flags="6">

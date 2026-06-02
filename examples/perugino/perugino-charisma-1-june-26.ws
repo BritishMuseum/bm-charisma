@@ -260,7 +260,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1445" y="699" open="false" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
+    <Column x="1445" y="699" open="true" selected="true" sform="false" next="1" name="H" caption="visible-induced IR luminescence">
       <Subcolumn vislevel="3">
         <Row popup="false" name="H2">
           <Rhs vislevel="2" flags="6">
@@ -1487,7 +1487,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1324" y="5" open="false" selected="true" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
+    <Column x="1324" y="5" open="true" selected="true" sform="false" next="1" name="B" caption="match vis-induced IR luminescence to vis">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B1">
           <Rhs vislevel="1" flags="4">
