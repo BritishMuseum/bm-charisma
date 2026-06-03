@@ -1,4 +1,4 @@
-# bm-workspaces: a set of nip4 workspaces for technical imaging
+# bm-charisma: a set of nip4 workspaces for technical imaging
 
 This nip4 workspace is for working with technical images of museum
 objects. It is useful for colour calibration, preparation of false-colour
